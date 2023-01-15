@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon" />
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>SOFA</title>
+</head>
+
+<body>
+
+  <!-- header  -->
+  <header class="header bg-first" id="header">
+    <div class="header__container container flex jus-between items-center">
+      <ul class="flex column-gap-100">
+        <li class="flex items-center column-gap-25">
+          <i class="ri-map-pin-2-line text-white size-75"></i>
+          <span class="text-white text-smaller">35 Tran Dai Nghia, Di An City</span>
+        </li>
+        <li class="flex items-center column-gap-25">
+          <i class="ri-phone-line text-white size-75"></i>
+          <span class="text-white text-smaller">(+84) 937 022 915</span>
+        </li>
+      </ul>
+      <ul class="flex column-gap-50 items-center md:none">
+        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+          <a href="#">
+              <i class="ri-facebook-fill size-75 text-white"></i>
+          </a>
+        </li>
+        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+          <a href="#">
+              <i class="ri-twitter-fill size-75 text-white"></i>
+          </a>
+        </li>
+        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+          <a href="#">
+              <i class="ri-instagram-fill size-75 text-white"></i>
+          </a>
+        </li>
+        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+          <a href="#">
+              <i class="ri-linkedin-fill size-75 text-white"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!----------------- NAV  -->
+  <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
+    <div class="nav__container container flex jus-between items-center ">
+      <!---------- HEADER LOGO  -->
+      <a href="#" class="nav__logo">
+        <img src="assets/img/logo.png" class="width-125" alt="Logo" />
+      </a>
+
+      <!----------- NAV MENU  -->
+      <div
+        class="nav__menu lg:fixed lg:-left-100% lg:top-0% lg:width-350 lg:bg-white lg:boxshadow-3 lg:p-top-400 lg:z-40 lg:trans-right-30"
+        id="nav-menu">
+        <ul class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center">
+          <!------------ LINK  -->
+          <li class="nav__item pointer active">
+            <a href="index.html"
+              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+              Home
+            </a>
+            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
+            </div>
+          </li>
+
+          <!-- DROPDOWN LINK  -->
+          <li class="nav__item pointer dropdown relative">
+            <p href="#"
+              class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+              pages
+              <i class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"></i>
+            </p>
+            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
+            </div>
+
+            <!---------------- DROP DOWN ITEM -->
+            <div
+              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
+              <ul class="grid row-gap-100 lg:row-gap-0">
+                <li class="nav__item">
+                  <a href="./pages/aboutus.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    about us
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./pages/offer.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    what we offer
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./pages/ourteam.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    our team
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./pages/testimonial.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    testmonials
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!------------ LINK  -->
+          <li class="nav__item pointer">
+            <a href="./blog.html"
+              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+              blog
+            </a>
+            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
+            </div>
+          </li>
+
+          <!------------ LINK  -->
+          <li class="nav__item pointer">
+            <a href="./gallery.html"
+              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+              gallery
+            </a>
+            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
+            </div>
+          </li>
+
+          <!-- DROPDOWN LINK  -->
+          <li class="nav__item pointer dropdown relative" id="dropdown">
+            <p href="#"
+              class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+              shop
+              <i class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"></i>
+            </p>
+            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
+            </div>
+
+            <!---------------- DROP DOWN ITEM -->
+            <div
+              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+              id="dropdown-item">
+              <ul class="grid row-gap-100 lg:row-gap-0">
+                <li class="nav__item">
+                  <a href="./shop/products.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    Product
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./shop/sighleproduct.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    single product
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./shop/shopcart.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    cart page
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="./shop/checkout.html"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                    checkout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="nav__close none lg:block absolute right-100 top-100 pointer" id="nav-close">
+          <i class="ri-close-line size-125 text-black"></i>
+        </div>
+      </div>
+
+      <!----------- NAV ACTION -->
+      <ul class="nav__action flex items-center column-gap-150">
+        <li class="relative">
+          <i class="ri-search-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
+        </li>
+
+        <!---------- CART NAV  -->
+        <li class="relative nav__cart" id="nav-cart-toggle">
+          <i class="ri-shopping-cart-2-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
+          <span
+            class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75">5</span>
+
+          <!---------- CART NAV CONTAINER  -->
+          <div id="nav-cart-container"
+            class="nav__cart-container none md:block absolute top-110% -right-200%  bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
+            <div id="nav-cart-close" class="nav__cart-close none md:block absolute top-100 right-100 pointer">
+              <i class="ri-close-line size-125"></i>
+            </div>
+            <h3 class="text-h3 text-upper text-second text-500 m-block-50">
+              total products: <span>5</span>
+            </h3>
+            <p class="text-small text-300">
+              Total price: $67.00
+            </p>
+            <hr class="m-block-75">
+
+            <!------------- NAV CART LIST  -->
+            <ul class="grid row-gap-75 m-bottom-100">
+
+              <!------------- NAV CART ITEM  -->
+              <li class="flex items-center column-gap-100">
+                <div class="width-100 height-100 p-50 bg-third hidden">
+                  <img src="assets/img/product/product-1-129x172.png" alt="">
+                </div>
+                <div>
+                  <h3 class="text-normal text-upper text-300 m-bottom-100">
+                    GARDEN TABLE
+                  </h3>
+
+                  <div class="flex column-gap-75 items-center m-bottom-100">
+                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
+                      <i class="ri-subtract-line size-75"></i>
+                    </button>
+                    <span class="text-small">
+                      2
+                    </span>
+                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
+                      <i class="ri-add-line size-75"></i>
+                    </button>
+                    <span class="text-small text-300">
+                      $25.00
+                    </span>
+                  </div>
+                </div>
+              </li>
+
+              <!------------- NAV CART ITEM  -->
+              <li class="flex items-center column-gap-100">
+                <div class="width-100 height-100 p-50 bg-third hidden">
+                  <img src="assets/img/product/product-2-160x155.png" alt="">
+                </div>
+                <div>
+                  <h3 class="text-normal text-upper text-300 m-bottom-100">
+                    CLUB CHAIR
+                  </h3>
+
+                  <div class="flex column-gap-75 items-center m-bottom-100">
+                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
+                      <i class="ri-subtract-line size-75"></i>
+                    </button>
+                    <span class="text-small">
+                      2
+                    </span>
+                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
+                      <i class="ri-add-line size-75"></i>
+                    </button>
+                    <span class="text-small text-300">
+                      $13.00
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="nav__card-action flex column-gap-100">
+              <a href="./shop/shopcart.html"
+                class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
+                go to card
+              </a>
+              <a href="./shop/checkout.html"
+                class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
+                check out
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="relative">
+          <i class="ri-message-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
+          <span
+            class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75">7</span>
+        </li>
+
+        <!---------- LOGIN NAV  -->
+        <li class="relative nav__login">
+          <i class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
+          <div
+            class="nav__login-container absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 none">
+            <ul class="flex direction-column row-gap-50">
+              <li class="">
+                <a href="./login/login.html"
+                  class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                  login
+                </a>
+              </li>
+              <li class="">
+                <a href="./login/login.html"
+                  class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
+                  register
+                </a>
+              </li>
+          </div>
+          </>
+        </li>
+        <li class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line none lg:block size-125 text-black hover:text-first trans-color-30 pointer"></i>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-------------- MAIN  -->
+  <main class="main">
+    <!----------- BANNER  -->
+    <section class="banner">
+      <!-------------- BANNER SWIPER  -->
+      <div class="swiper bannerSwiper">
+        <div class="swiper-wrapper">
+          <!-------------------- SLIDER -->
+          <div class="swiper-slide bg-cover bg-top" style="
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0.1),
+                    rgba(0, 0, 0, 0.1)
+                  ),
+                  url('./assets/img/banner/slide-1.jpg');
+              ">
+            <div class="container height-100% flex direction-column row-gap-150 items-center jus-center md:row-gap-100">
+              <h2 class="text-biggest text-300 text-white letter-2 text-center">
+                TOP-NOTCH FURNITURE
+              </h2>
+              <p class="text-third md:p-inline-200 text-center">
+                Sofa Store provides the best furniture and accessories for
+                homes and offices.
+              </p>
+              <a href="#"
+                class="text-upper text-smaller text-second bg-white p-block-100 p-inline-175 hover:text-white hover:bg-first trans-all-30">shop
+                now</a>
+            </div>
+          </div>
+
+          <!-------------------- SLIDER -->
+          <div class="swiper-slide bg-cover bg-top" style="background-image: url('./assets/img/banner/slide-2.jpg')">
+            <div
+              class="container height-100% p-left-400 flex direction-column row-gap-150 items-start jus-center md:p-left-0 md:row-gap-100 md:items-center">
+              <h2 class="text-biggest text-300 text-second letter-2 text-start md:text-center">
+                QUALITY <br />
+                <span class="text-first">DECOR</span>
+              </h2>
+              <p class="text-second md:p-inline-200 text-end md:text-center">
+                Choose anything you need from a wide <br />
+                range of impressive home decor solutions.
+              </p>
+              <a href="#"
+                class="text-upper text-smaller text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">shop
+                now</a>
+            </div>
+          </div>
+
+          <!-------------------- SLIDER -->
+          <div class="swiper-slide bg-cover bg-top" style="background-image: url('./assets/img/banner/slide-3.jpg')">
+            <div
+              class="container height-100% p-left-400 flex direction-column row-gap-150 items-start jus-center md:p-left-0 md:row-gap-100 md:items-center">
+              <h2 class="text-biggest text-300 text-second letter-2 text-start md:text-center">
+                IMPRESSIVE <br />
+                <span class="text-first">LIGHTING</span>
+              </h2>
+              <p class="text-second md:p-inline-200 text-end md:text-center">
+                Improve your home’s lighting with hundreds<br />
+                of products available at Sofa.
+              </p>
+              <a href="#"
+                class="text-upper text-smaller text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">shop
+                now</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper-button-next border-first-1 ri-arrow-right-s-line size-150 text-first bg-white height-50 width-50 radius-50% md:none">
+        </div>
+        <div
+          class="swiper-button-prev border-first-1 ri-arrow-left-s-line size-150 text-first bg-white height-50 width-50 radius-50% md:none">
+        </div>
+      </div>
+    </section>
+    <!-- 
+    <section class="category bg-second p-block-200">
+      <h2 class="text-h1 text-white text-500 text-center m-bottom-150">
+        CATEGORIES
+      </h2>
+      </div>
+    </section> -->
+
+    <!------------- TRENDING PRODUCT  -->
+    <section class="trending p-top-350 p-bottom-400 m-bottom-200">
+      <div class="container">
+        <!------------- H2  -->
+        <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-300 reveal-top">
+          <h2 class="p-bottom-75 text-h2 text-500 text-second letter-1">
+            TRENDING PRODUCTS
+          </h2>
+          <div class="line bg-second left-0 bottom-0 width-50%"></div>
+        </div>
+        <!----------- PRODUCT  -->
+        <div
+          class="product__container grid grid-cols-4 lg:grid-cols-2:300 md:grid-cols-1:300 column-gap-100 row-gap-150 jus-center reveal-bottom">
+          <!------------ PRODUCT ITEM  SALE-->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-1-129x172.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              GARDEN TABLE
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-300 text-second text-line-through m-right-50">$30.00
+              </span>
+              <span class="text-700 text-first">$23.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+            <span
+              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+              style="background-color: rgb(255, 128, 128)">
+              sale
+            </span>
+          </div>
+
+          <!------------ PRODUCT ITEM NEW -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 ">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-2-160x155.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              CLUB CHAIR
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$13.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+            <span
+              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+              style="background-color: rgb(163, 178, 255)">
+              new
+            </span>
+          </div>
+
+          <!------------ PRODUCT ITEM -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-3-132x200.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              PENDANT LAMP
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$17.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!------------ PRODUCT ITEM NEW -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-4-140x168.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              DARK GREY CLUB CHAIR
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$14.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+            <span
+              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+              style="background-color: rgb(163, 178, 255)">
+              new
+            </span>
+          </div>
+
+          <!------------ PRODUCT ITEM NEW -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-4-140x168.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              TABLE LAMP
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$11.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+            <span
+              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+              style="background-color: rgb(163, 178, 255)">
+              new
+            </span>
+          </div>
+
+          <!------------ PRODUCT ITEM -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-6-110x69.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              ORANGE STACKING CHAIR
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$15.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!------------ PRODUCT ITEM  SALE-->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-7-121x201.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              FLOOR LAMP
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-300 text-second text-line-through m-right-50">$32.00
+              </span>
+              <span class="text-700 text-first">$22.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+            <span
+              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+              style="background-color: rgb(255, 128, 128)">
+              sale
+            </span>
+          </div>
+
+          <!------------ PRODUCT ITEM -->
+          <div
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+            <img class="width-125 height-150 img-top img-contain m-bottom-100"
+              src="./assets/img/product/product-8-128x179.png" alt="" />
+            <h3 class="text-normal text-upper text-300 m-bottom-75">
+              WHITE CHAIR
+            </h3>
+            <div class="m-bottom-100">
+              <span class="text-700 text-first">$10.00</span>
+            </div>
+            <div class="static flex jus-center column-gap-75">
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-search-line"></i>
+              </div>
+              <div
+                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                <i class="ri-shopping-cart-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------- ABOUT -->
+    <section class="about bg-third p-block-400">
+      <div class="container grid grid-cols-2 md:grid-cols-1 md:row-gap-200 column-gap-200">
+        <div class="about__img reveal-left">
+          <img src="./assets/img/about-8-668x330.png" alt="" />
+        </div>
+        <div class="about__data reveal-right">
+          <h2 class="text-h1 text-second text-500 m-bottom-100">
+            PROVIDING THE BEST <br />
+            FURNITURE AND DECOR
+          </h2>
+          <p class="text-title text-300 m-bottom-100">
+            At Sofa, we aim to supply our customers with the first-class
+            furniture & decor products that make their life comfortable.
+          </p>
+          <div class="flex column-gap-125 items-center">
+            <a
+              class="height-50 width-50 bg-first hover:bg-white text-white hover:text-first flex jus-center items-center radius-50% trans-all-30 pointer">
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <div>
+              <h3 class="text-small text-second">Thanh Trung</h3>
+              <em class="text-title text-smaller">Founder</em>
+            </div>
+            <img class="width-100" src="./assets/img/signature-1-160x55.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------- PORTFOLIO  -->
+    <section class="portfolio p-top-400 p-bottom-350">
+
+      <!------------------ TITLE  -->
+      <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-250 reveal-top">
+        <h2 class="p-bottom-75 text-h2 text-500 text-second letter-1 text-upper">
+          portfolio
+        </h2>
+        <div class="line bg-second left-0 bottom-0 width-50%"></div>
+      </div>
+      <div class="container reveal-bottom">
+        <ul class="flex column-gap-100 wrap jus-center m-bottom-200">
+          <li
+            class="text-upper text-first p-block-50 text-smaller p-inline-175 border-first-1 hover:bg-first hover:text-white trans-all-20 pointer">
+            all
+          </li>
+          <li
+            class="text-upper text-first p-block-50 text-smaller p-inline-175 border-first-1 hover:bg-first hover:text-white trans-all-20 pointer">
+            decor
+          </li>
+          <li
+            class="text-upper text-first p-block-50 text-smaller p-inline-175 border-first-1 hover:bg-first hover:text-white trans-all-20 pointer">
+            furniture
+          </li>
+        </ul>
+
+        <!-------------------- PORTFOLIO CONTAINER  -->
+        <div class="portfolio__container">
+          <div class="grid grid-cols-2 column-gap-150 md:grid-cols-1 lg:column-gap-75 lg:row-gap-75">
+            <div class="grid row-gap-150 lg:row-gap-75">
+              <div class="grid grid-cols-2 column-gap-150 lg:column-gap-75">
+                <div class="grid grid-rows-2 row-gap-150 lg:row-gap-75">
+
+                  <!-------------- PORTFOLIO ITEM  -->
+                  <div class="portfolio__item relative pointer">
+                    <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-7-270x250.jpg"
+                      alt="">
+                    <div
+                      class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                      <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                        sunshine restaurant
+                      </h3>
+                      <p
+                        class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                        decor
+                      </p>
+                      <a href="#"
+                        class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                        <i class="ri-search-line"></i>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-------------- PORTFOLIO ITEM  -->
+                  <div class="portfolio__item relative pointer">
+                    <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg"
+                      alt="">
+                    <div
+                      class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                      <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                        newyork public library
+                      </h3>
+                      <p
+                        class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                        decor
+                      </p>
+                      <a href="#"
+                        class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                        <i class="ri-search-line"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-------------- PORTFOLIO ITEM  -->
+                <div class="portfolio__item relative pointer">
+                  <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-5-270x530.jpg"
+                    alt="">
+                  <div
+                    class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                    <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                      newyork public library
+                    </h3>
+                    <p
+                      class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                      decor
+                    </p>
+                    <a href="#"
+                      class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                      <i class="ri-search-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-------------- PORTFOLIO ITEM  -->
+              <div class="portfolio__item relative pointer">
+                <img class="img-center img-cover" src="assets/img/portfolio/portfolio-2-570x250.jpg" alt="">
+                <div
+                  class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                  <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                    monroe's bar
+                  </h3>
+                  <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                    decor
+                  </p>
+                  <a href="#"
+                    class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                    <i class="ri-search-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-rows-1:2 row-gap-150 lg:row-gap-75">
+              <div class="grid grid-cols-2 column-gap-150 lg:column-gap-75">
+
+                <!-------------- PORTFOLIO ITEM  -->
+                <div class="portfolio__item relative pointer">
+                  <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-3-270x250.jpg"
+                    alt="">
+                  <div
+                    class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                    <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                      u-style fashion house
+                    </h3>
+                    <p
+                      class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                      decor
+                    </p>
+                    <a href="#"
+                      class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                      <i class="ri-search-line"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-------------- PORTFOLIO ITEM  -->
+                <div class="portfolio__item relative pointer">
+                  <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-4-270x250.jpg"
+                    alt="">
+                  <div
+                    class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                    <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                      flash cake
+                    </h3>
+                    <p
+                      class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                      furniture
+                    </p>
+                    <a href="#"
+                      class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                      <i class="ri-search-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-------------- PORTFOLIO ITEM  -->
+              <div class="portfolio__item relative pointer">
+                <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-1-570x530.jpg" alt="">
+                <div
+                  class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
+                  <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
+                    q-biz coworking
+                  </h3>
+                  <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
+                    furniture
+                  </p>
+                  <a href="#"
+                    class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                    <i class="ri-search-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!------------- BLOG  -->
+    <section class="blog p-top-250 p-bottom-400">
+
+      <!------------------ TITLE  -->
+      <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-275  reveal-top">
+        <h2 class="p-bottom-75 text-h2 text-500 text-second letter-1 text-upper">
+          blog
+        </h2>
+        <div class="line bg-second left-0 bottom-0 width-50%"></div>
+      </div>
+
+      <!------------------ BLOG CONTAINER  -->
+      <div class="blog__container container reveal-bottom">
+        <div class="grid grid-cols-2:1 column-gap-175 lg:grid-cols-1:0 lg:column-gap-0">
+
+          <!-------------- BLOG LEFT  -->
+          <div class="grid row-gap-175">
+
+            <!---------------- CARD  -->
+            <div class="card pointer p-bottom-100 border-bottom-third-1">
+
+              <!-------------- CARD IMAGE  -->
+              <div class="card__img relative hidden height-350 m-bottom-50 radius-50">
+                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg" alt="">
+              </div>
+
+              <div class="flex jus-between m-bottom-75">
+
+                <!------------- CARD ACTION  -->
+                <div class="flex column-gap-100">
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                  </span>
+                </div>
+
+                <!------------- CARD ACTION  -->
+                <div class="flex column-gap-100">
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-heart-line size-100 m-right-25"></i>
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-thumb-up-line size-100 m-right-25"></i>
+                  </span>
+                </div>
+              </div>
+              <h2 class="text-h2 text-500 m-bottom-25 text-upper">
+                Top 20 Interior Home Decor Trends of 2021
+              </h2>
+              <div class="card__description">
+                <p class=" text-small line-170">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit praesentium nihil doloremque
+                  quia
+                  ad eos consequatur reprehenderit sequi quaerat ipsum consequuntur quam repudiandae, dolorem deserunt
+                  perferendis harum sapiente saepe.
+                </p>
+                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more <i
+                    class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
+              </div>
+            </div>
+
+            <!---------------- CARD  -->
+            <div class="card pointer p-bottom-100 border-bottom-third-1">
+
+              <!-------------- CARD IMAGE  -->
+              <div class="card__img hidden height-300 m-bottom-50 radius-50">
+                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-11-420x368 (1).jpg"
+                  alt="">
+              </div>
+
+              <div class="flex jus-between m-bottom-75">
+
+                <!------------- CARD ACTION  -->
+                <div class="flex column-gap-100">
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                  </span>
+                </div>
+
+                <!------------- CARD ACTION  -->
+                <div class="flex column-gap-100">
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-heart-line size-100 m-right-25"></i>
+                  </span>
+                  <span class="text-smaller text-300 text-second flex items-center">
+                    <i class="ri-thumb-up-line size-100 m-right-25"></i>
+                  </span>
+                </div>
+              </div>
+              <h2 class="text-h2 text-500 m-bottom-25 text-upper">
+                How to Choose Furniture for Your Home
+              </h2>
+              <div class="card__description">
+                <p class=" text-small line-170">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit praesentium nihil doloremque
+                  quia
+                  ad eos consequatur reprehenderit sequi quaerat ipsum consequuntur quam repudiandae, dolorem deserunt
+                  perferendis harum sapiente saepe.
+                </p>
+                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more <i
+                    class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-------------- BLOG RIGHT  -->
+          <div class="lg:none">
+            <form
+              class="width-100% p-inline-100 p-block-75 bg-first flex jus-between items-center radius-25 m-bottom-150">
+              <input type="text" placeholder="Search"
+                class="width-90% text-smaller bg-transparent text-white border-black-0 outline-none">
+              <button type="submit" class="bg-transparent border-black-0 text-white pointer">
+                <i class="ri-search-line"></i>
+              </button>
+            </form>
+
+            <h2 class="text-h2 text-first text-700 m-bottom-75">
+              News
+            </h2>
+            <div class="grid row-gap-100 m-bottom-125">
+
+              <!----------- CARD SMALL  -->
+              <div class="card grid grid-cols-2 column-gap-50 pointer">
+                <div class="card__img hidden height-125 radius-25">
+                  <img src="./assets/img/blog/post-12-420x368.jpg" alt="Hinh anh blog"
+                    class="img-top img-cover trans-transform-20">
+                </div>
+                <div>
+                  <h3 class="text-normal text-second m-bottom-50 text-700">
+                    LED Lighting and Its Benefits
+                  </h3>
+                  <div class="grid row-gap-50">
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                    </span>
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                    </span>
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!----------- CARD SMALL  -->
+              <div class="card grid grid-cols-2 column-gap-50 pointer">
+                <div class="card__img hidden height-125  radius-25">
+                  <img src="./assets/img/blog/post-13-420x368.jpg" alt="Hinh anh blog"
+                    class="img-bottom img-cover trans-transform-20">
+                </div>
+                <div>
+                  <h3 class="text-normal text-second m-bottom-50 text-700">
+                    What to Look for When Shopping
+                  </h3>
+                  <div class="grid row-gap-50">
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                    </span>
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                    </span>
+                    <span class="text-smaller text-300 text-second flex items-center">
+                      <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-h2 text-first text-700 m-bottom-75">
+              Categories
+            </h2>
+            <ul class="grid row-gap-50 m-bottom-125">
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Livingrooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">30</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Bedrooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">20</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Dining rooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">15</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Bathrooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">37</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Decore & funiture <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">60</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Kid rooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">72</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
+                  Bed rooms <span
+                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">10</span>
+                </a>
+              </li>
+            </ul>
+            <h2 class="text-h2 text-first text-700 m-bottom-75">
+              Tags
+            </h2>
+            <ul class="flex gap-50 wrap m-bottom-125">
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Chair
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Table
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Lamp
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Bed
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Flower stand
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Carpet
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block p-inline-150 p-block-75 text-smaller border-first-1 radius-125">
+                  Light
+                </a>
+              </li>
+            </ul>
+            <div class="p-block-150 p-inline-100 bg-second">
+              <h3 class="text-h3 text-white m-bottom-150">
+                Contact
+              </h3>
+              <form action="" class="width-100% bg-first p-inline-100 p-block-75 m-bottom-100">
+                <input type="text" placeholder="Your Email"
+                  class="border-black-0 outline-none bg-transparent text-smaller text-white">
+              </form>
+              <button type="submit"
+                class="p-block-100 width-100% radius-150 bg-white border-first-1 text-first pointer text-700">
+                Subscribe
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------- SALE  -->
+    <section class="sale">
+      <div class="container p-block-150">
+        <div class="swiper saleSwiper">
+          <div class="swiper-wrapper">
+
+            <!------------ PRODUCT ITEM  SALE-->
+            <div
+              class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
+              <img class="width-125 height-150 img-top img-contain m-bottom-100"
+                src="./assets/img/product/product-1-129x172.png" alt="" />
+              <h3 class="text-normal text-upper text-300 m-bottom-75">
+                GARDEN TABLE
+              </h3>
+              <div class="m-bottom-100">
+                <span class="text-300 text-second text-line-through m-right-50">$30.00
+                </span>
+                <span class="text-700 text-first">$23.00</span>
+              </div>
+              <div class="static flex jus-center column-gap-75">
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-search-line"></i>
+                </div>
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-shopping-cart-line"></i>
+                </div>
+              </div>
+              <span
+                class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                style="background-color: rgb(255, 128, 128)">
+                sale
+              </span>
+            </div>
+
+            <!------------ PRODUCT ITEM  SALE-->
+            <div
+              class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
+              <img class="width-125 height-150 img-top img-contain m-bottom-100"
+                src="./assets/img/product/product-2-160x155.png" alt="" />
+              <h3 class="text-normal text-upper text-300 m-bottom-75">
+                CLUB CHAIR
+              </h3>
+              <div class="m-bottom-100">
+                <span class="text-300 text-second text-line-through m-right-50">$32.00
+                </span>
+                <span class="text-700 text-first">$24.00</span>
+              </div>
+              <div class="static flex jus-center column-gap-75">
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-search-line"></i>
+                </div>
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-shopping-cart-line"></i>
+                </div>
+              </div>
+              <span
+                class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                style="background-color: rgb(255, 128, 128)">
+                sale
+              </span>
+            </div>
+
+            <!------------ PRODUCT ITEM  SALE-->
+            <div
+              class="product__item swiper-slide relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
+              <img class="width-125 height-150 img-top img-contain m-bottom-100"
+                src="./assets/img/product/product-3-132x200.png" alt="" />
+              <h3 class="text-normal text-upper text-300 m-bottom-75">
+                PENDANT LAMP
+              </h3>
+              <div class="m-bottom-100">
+                <span class="text-300 text-second text-line-through m-right-50">$17.00
+                </span>
+                <span class="text-700 text-first">$10.00</span>
+              </div>
+              <div class="static flex jus-center column-gap-75">
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-search-line"></i>
+                </div>
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-shopping-cart-line"></i>
+                </div>
+              </div>
+              <span
+                class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                style="background-color: rgb(255, 128, 128)">
+                sale
+              </span>
+            </div>
+            <!------------ PRODUCT ITEM  SALE-->
+            <div
+              class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
+              <img class="width-125 height-150 img-top img-contain m-bottom-100"
+                src="./assets/img/product/product-7-121x201.png" alt="" />
+              <h3 class="text-normal text-upper text-300 m-bottom-75">
+                FLOOR LAMP
+              </h3>
+              <div class="m-bottom-100">
+                <span class="text-300 text-second text-line-through m-right-50">$30.00
+                </span>
+                <span class="text-700 text-first">$23.00</span>
+              </div>
+              <div class="static flex jus-center column-gap-75">
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-search-line"></i>
+                </div>
+                <div
+                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
+                  <i class="ri-shopping-cart-line"></i>
+                </div>
+              </div>
+              <span
+                class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                style="background-color: rgb(255, 128, 128)">
+                sale
+              </span>
+            </div>
+
+          </div>
+          <div class="swiper-button-next sale__icon-next bg-first width-50 height-50 radius-50% md:none">
+            <i class="ri-arrow-right-s-line size-125 text-white"></i>
+          </div>
+          <div class="swiper-button-prev sale__icon-prev bg-first width-50 height-50 radius-50% md:none">
+            <i class="ri-arrow-left-s-line size-125 text-white"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!----------- FOOTER  -->
+  <footer class="footer p-top-300 p-bottom-400 bg-second reveal-left">
+    <div class="footer__container container grid grid-cols-3 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
+
+      <!------------ FOOTER ITEM  -->
+      <div class="footer__item">
+        <img src="assets/img/logofooter.png" alt="" class="width-100 m-bottom-100 sm:width-150">
+        <div class="flex column-gap-100 text-title text-small m-bottom-25">
+          <span>Weekdays:</span>
+          <span>08:00am - 08:00pm</span>
+        </div>
+        <div class="flex column-gap-100 text-title text-small">
+          <span>Weekends:</span>
+          <span>10:00am - 06:00pm</span>
+        </div>
+        <div class="footer__line width-225 m-block-100"></div>
+        <div class="flex column-gap-150">
+          <span class="text-white">
+            Get Social
+          </span>
+          <ul class="flex column-gap-75">
+            <li>
+              <a href="#" class="text-white">
+                <i class="ri-facebook-fill size-125"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="ri-twitter-fill size-125"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="ri-youtube-line size-125"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!----------- FOOTER ITEM  -->
+      <div class="footer__item">
+        <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
+          contacts
+        </h3>
+        <ul class="grid row-gap-100">
+          <li class="flex column-gap-100 items-center">
+            <i class="ri-map-pin-line text-first size-100"></i>
+            <span class="text-title text-small">
+              35 Tran Dai Nghia, Di An City
+            </span>
+          </li>
+          <li class="flex column-gap-100 items-center">
+            <i class="ri-phone-line text-first size-100"></i>
+            <span class="text-title text-small">
+              (+84) 937 022 915
+            </span>
+          </li>
+          <li class="flex column-gap-100 items-center">
+            <i class="ri-mail-line text-first size-100"></i>
+            <span class="text-title text-small">
+              thanhtrung71119999@gmail.com
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!----------- FOOTER ITEM  -->
+      <div class="footer__item">
+        <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
+          NEWSLETTER
+        </h3>
+        <p class="text-small text-title m-bottom-100">
+          Subscribe to our newsletter to receive weekly news, updates, special offers, and exclusive discounts.
+        </p>
+        <form action="" class="bg-first p-inline-100 p-block-75 flex jus-between">
+          <input class="width-90% outline-none border-black-0 bg-transparent text-white text-smaller"
+            placeholder="Enter your email" type="text">
+          <i class="ri-send-plane-fill text-white pointer"></i>
+        </form>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright flex jus-center items-center height-75 bg-white text-first text-700 reveal-left">
+    © 2023 Sofa. All rights reserved
+  </div>
+  <a href="#" id="scrollUp"
+    class="scroll__up fixed -bottom-100% right-100 height-50 width-50 radius-50% flex items-center jus-center bg-white boxshadow-10 text-first pointer">
+    <i class="ri-arrow-up-line size-125"></i>
+  </a>
+
+  <script src="./assets/js/scrollreveal.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

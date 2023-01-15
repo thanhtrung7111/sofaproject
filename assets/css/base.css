@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root {
+  --header-height: 3.5rem;
+  --body-font: 'Roboto Condensed', sans-serif;
+
+  --first-color: #92c5d9;
+  --second-color: #5c5c5c;
+  --third-color: rgb(239, 239, 239);
+  --white-color: #fff;
+  --black-color: rgb(47, 47, 47);
+  --title-color:rgb(163, 163, 163) ;
+  --body-color:#fff;
+
+  --biggest-font-size: 4rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.75rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--black-color);
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    font-size: var(--normal-font-size);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    max-width: 1200px;
+    margin-inline: auto;
+}
+.main{
+    overflow: hidden;
+}
+
+@media screen and (max-width:1240px) {
+    .container{
+        margin-inline:1.5rem;
+    }
+}
+
+.section{
+    padding-block: 5rem 3rem;
+}
+
+.m-auto{
+    margin: auto;
+}
+
+.m-inline-auto{
+    margin-inline: auto;
+}
+
+.m--block-auto{
+    margin-block: auto;
+}
+
+.p-auto{
+    padding: auto;
+}
+
+.p-inline-auto{
+    padding-inline: auto;
+}
+
+.p-block-auto{
+    padding-block: auto;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.hidden{
+    overflow: hidden;
+}
+
+.outline-none{
+    outline: none;
+}
+
+.width-fit{
+    width: fit-content;
+}
+
+input::placeholder{
+    color: var(--white-color);
+}
+
+::-webkit-scrollbar{
+    background-color: rgb(227, 227, 227);
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--second-color);
+}
+
+@media screen and (max-width:1024px) {
+    .lg\:hidden{
+        overflow: hidden;
+    }
+}
