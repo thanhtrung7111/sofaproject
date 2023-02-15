@@ -15,9 +15,138 @@
 </head>
 
 <body>
+    <!-- modal -->
+    <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
+        <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
+            <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
+                <i class="ri-close-fill"></i>
+            </div>
+
+            <div class="modal__header relative border-bottom-third-1 m-block-150">
+                <div class="modal__header-active absolute bg-first trans-transform-30"></div>
+                <div class="modal__header-container grid grid-cols-2">
+                    <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+                        data-modal-header="login">
+                        Login
+                    </span>
+                    <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+                        data-modal-header="register">
+                        Register
+                    </span>
+                </div>
+            </div>
+            <div class="modal__content">
+                <div class="modal__form none modal__form-active" data-modal-content="login">
+                    <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+                        <input type="text" placeholder="Username"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <input type="password" placeholder="Password"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <a href="#"
+                            class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
+                        <p class="text-600 text-first text-center m-block-75">
+                            Or login with:
+                        </p>
+                        <ul class="flex column-gap-100 jus-center">
+                            <li>
+                                <a href="#" class="block height-25 width-25">
+                                    <img src="./assets/img/social/facebook-logo-2019.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block height-25 width-25">
+                                    <img src="./assets/img/social/google-plus.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block height-25 width-25">
+                                    <img src="./assets/img/social/linkedin.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block height-25 width-25">
+                                    <img src="./assets/img/social/twitter.png" alt="" />
+                                </a>
+                            </li>
+                            <li></li>
+                        </ul>
+                        <p class="text-center size-75 m-top-125">
+                            Do not have an account?<a href="#" class="text-first">
+                                Register
+                            </a>
+                        </p>
+                    </form>
+                </div>
+                <div class="modal__form none" data-modal-content="register">
+                    <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+                        <input type="text" placeholder="Username"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <input type="password" placeholder="Password"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <input type="password" placeholder="Password Again"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <input type="text" placeholder="Email"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <input type="text" placeholder="Phone"
+                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                        <a href="#"
+                            class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
+                        <p class="text-center size-75 m-top-125">
+                            Do you have an account?<a href="#" class="text-first">
+                                Login
+                            </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- header  -->
-    <header class="header sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90" id="header">
-        <nav class="nav container flex jus-between items-center">
+    <header class="header bg-first" id="header">
+        <div class="header__container container flex jus-between items-center">
+            <ul class="flex column-gap-100">
+                <li class="flex items-center column-gap-25">
+                    <i class="ri-map-pin-2-line text-white size-75"></i>
+                    <span class="text-white text-smaller">35 Tran Dai Nghia, Di An City</span>
+                </li>
+                <li class="flex items-center column-gap-25">
+                    <i class="ri-phone-line text-white size-75"></i>
+                    <span class="text-white text-smaller">(+84) 937 022 915</span>
+                </li>
+            </ul>
+            <ul class="flex column-gap-50 items-center md:none">
+                <li
+                    class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+                    <a href="#">
+                        <i class="ri-facebook-fill size-75 text-white"></i>
+                    </a>
+                </li>
+                <li
+                    class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+                    <a href="#">
+                        <i class="ri-twitter-fill size-75 text-white"></i>
+                    </a>
+                </li>
+                <li
+                    class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+                    <a href="#">
+                        <i class="ri-instagram-fill size-75 text-white"></i>
+                    </a>
+                </li>
+                <li
+                    class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+                    <a href="#">
+                        <i class="ri-linkedin-fill size-75 text-white"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!----------------- NAV  -->
+    <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
+        <div class="nav__container container flex jus-between items-center">
             <!---------- HEADER LOGO  -->
             <a href="#" class="nav__logo">
                 <img src="../assets/img/logo.png" class="width-125" alt="Logo" />
@@ -28,7 +157,7 @@
                 id="nav-menu">
                 <ul class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center">
                     <!------------ LINK  -->
-                    <li class="nav__item pointer">
+                    <li class="nav__item pointer active">
                         <a href="../index.html"
                             class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                             Home
@@ -39,7 +168,7 @@
                     </li>
 
                     <!-- DROPDOWN LINK  -->
-                    <li class="nav__item pointer dropdown relative ">
+                    <li class="nav__item pointer dropdown relative">
                         <p href="#"
                             class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                             pages
@@ -52,7 +181,7 @@
 
                         <!---------------- DROP DOWN ITEM -->
                         <div
-                            class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
+                            class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
                             <ul class="grid row-gap-100 lg:row-gap-0">
                                 <li class="nav__item">
                                     <a href="./aboutus.html"
@@ -72,7 +201,7 @@
                                         our team
                                     </a>
                                 </li>
-                                <li class="nav__item active">
+                                <li class="nav__item">
                                     <a href="./testimonial.html"
                                         class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                                         testmonials
@@ -117,7 +246,7 @@
                         </div>
 
                         <!---------------- DROP DOWN ITEM -->
-                        <div class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+                        <div class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
                             id="dropdown-item">
                             <ul class="grid row-gap-100 lg:row-gap-0">
                                 <li class="nav__item">
@@ -167,7 +296,7 @@
 
                     <!---------- CART NAV CONTAINER  -->
                     <div id="nav-cart-container"
-                        class="nav__cart-container none md:block absolute top-110% -right-200%  bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
+                        class="nav__cart-container opacity-0 visibility-hidden md:visibility-visible trans-opacity-30 md:block absolute top-110% -right-200% bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
                         <div id="nav-cart-close"
                             class="nav__cart-close none md:block absolute top-100 right-100 pointer">
                             <i class="ri-close-line size-125"></i>
@@ -175,18 +304,15 @@
                         <h3 class="text-h3 text-upper text-second text-500 m-block-50">
                             total products: <span>5</span>
                         </h3>
-                        <p class="text-small text-300">
-                            Total price: $67.00
-                        </p>
-                        <hr class="m-block-75">
+                        <p class="text-small text-300">Total price: $67.00</p>
+                        <hr class="m-block-75" />
 
                         <!------------- NAV CART LIST  -->
                         <ul class="grid row-gap-75 m-bottom-100">
-
                             <!------------- NAV CART ITEM  -->
                             <li class="flex items-center column-gap-100">
                                 <div class="width-100 height-100 p-50 bg-third hidden">
-                                    <img src="../assets/img/product/product-1-129x172.png" alt="">
+                                    <img src="assets/img/product/product-1-129x172.png" alt="" />
                                 </div>
                                 <div>
                                     <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -198,16 +324,12 @@
                                             class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                                             <i class="ri-subtract-line size-75"></i>
                                         </button>
-                                        <span class="text-small">
-                                            2
-                                        </span>
+                                        <span class="text-small"> 2 </span>
                                         <button
                                             class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                                             <i class="ri-add-line size-75"></i>
                                         </button>
-                                        <span class="text-small text-300">
-                                            $25.00
-                                        </span>
+                                        <span class="text-small text-300"> $25.00 </span>
                                     </div>
                                 </div>
                             </li>
@@ -215,7 +337,7 @@
                             <!------------- NAV CART ITEM  -->
                             <li class="flex items-center column-gap-100">
                                 <div class="width-100 height-100 p-50 bg-third hidden">
-                                    <img src="../assets/img/product/product-2-160x155.png" alt="">
+                                    <img src="assets/img/product/product-2-160x155.png" alt="" />
                                 </div>
                                 <div>
                                     <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -227,16 +349,12 @@
                                             class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                                             <i class="ri-subtract-line size-75"></i>
                                         </button>
-                                        <span class="text-small">
-                                            2
-                                        </span>
+                                        <span class="text-small"> 2 </span>
                                         <button
                                             class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                                             <i class="ri-add-line size-75"></i>
                                         </button>
-                                        <span class="text-small text-300">
-                                            $13.00
-                                        </span>
+                                        <span class="text-small text-300"> $13.00 </span>
                                     </div>
                                 </div>
                             </li>
@@ -264,30 +382,30 @@
                 <li class="relative nav__login">
                     <i class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
                     <div
-                        class="nav__login-container absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 none">
+                        class="nav__login-container visibility-hidden opacity-0 absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 trans-opacity-30">
                         <ul class="flex direction-column row-gap-50">
-                            <li class="">
-                                <a href="./login/login.html"
+                            <li class="" id="login">
+                                <a href="#"
                                     class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                                     login
                                 </a>
                             </li>
                             <li class="">
-                                <a href="./login/login.html"
+                                <a href="#"
                                     class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                                     register
                                 </a>
                             </li>
+                        </ul>
                     </div>
-                    </>
                 </li>
                 <li class="nav__toggle" id="nav-toggle">
                     <i
                         class="ri-menu-line none lg:block size-125 text-black hover:text-first trans-color-30 pointer"></i>
                 </li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-------------- MAIN  -->
     <main class="main">
@@ -298,18 +416,190 @@
                     <h2 class="text-h2 text-white text-upper text-500 m-bottom-125 letter-1">
                         testimonials
                     </h2>
-                    <p class="text-small text-white text-300 text-white text-center width-500 sm:width-450 m-inline-auto letter-1">
-                        Quisque ullamcorper nulla magna, vitae tincidunt ipsum interdum nec
-                        sit amet fermentum pellentesque, pulvinar non tellus.
-                    </p>
                 </div>
             </div>
-            <div class="flex jus-center items-center column-gap-50 p-block-100 bg-second">
-                <span class="text-smaller text-white text-upper">Home</span>
-                <i class="ri-arrow-right-line size-75 text-white"></i>
-                <span class="text-smaller text-white text-upper">pages</span>
-                <i class="ri-arrow-right-line size-75 text-white"></i>
-                <span class="text-smaller text-first text-upper">testimonials</span>
+            <div class="flex jus-center items-center column-gap-50 p-block-100 bg-third">
+                <span class="text-smaller text-second text-upper text-600">Home</span>
+                <i class="ri-arrow-right-line size-75 text-second"></i>
+                <span class="text-smaller text-second text-upper text-600">pages</span>
+                <i class="ri-arrow-right-line size-75 text-second"></i>
+                <span class="text-smaller text-first text-upper text-600">testimonial</span>
+            </div>
+        </section>
+
+        <!---------------- TESTIMONIAL 1  -->
+        <section class="p-block-500">
+            <div class="container">
+                <h2 class="text-h1 text-center text-300 letter-2 m-bottom-300">
+                    #1
+                </h2>
+                <div class="grid grid-cols-2 column-gap-200 md:flex md:direction-column md:row-gap-100">
+                    <div
+                        class="p-block-250 p-inline-150 flex direction-column items-center row-gap-150 border-third-1 boxshadow-8">
+                        <i class="ri-double-quotes-l text-first text-biggest"></i>
+                        <p class="text-second text-normal text-center">
+                            Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium.
+                            Cum luna prarere, omnes cannabises resuscitabo
+                        </p>
+                        <div class="flex items-center column-gap-75">
+                            <img src="../assets/img/person/team-4-270x227.jpg" alt="Image Client"
+                                class="width-75 height-75 img-cover img-center radius-50%">
+                            <div>
+                                <h3 class="text-normal text-black">Rebecca</h3>
+                                <span class="text-first text-small">
+                                    Client
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="p-block-250 p-inline-150 flex direction-column items-center row-gap-150 border-third-1 boxshadow-8">
+                        <i class="ri-double-quotes-l text-first text-biggest"></i>
+                        <p class="text-second text-normal text-center">
+                            Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium.
+                            Cum luna prarere, omnes cannabises resuscitabo
+                        </p>
+                        <div class="flex items-center column-gap-75">
+                            <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                                class="width-75 height-75 img-cover img-center radius-50%">
+                            <div>
+                                <h3 class="text-normal text-black">John</h3>
+                                <span class="text-first text-small">
+                                    Client
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---------------- TESTIMONIAL 2  -->
+        <section class="p-block-500"
+            style="background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../assets/img/pages/bg-pattern-1.jpg');">
+            <div class="container">
+                <h2 class="text-h1 text-center text-300 letter-2 m-bottom-300">
+                    #2
+                </h2>
+                <h3 class="text-second text-center m-inline-auto text-400 width-80% m-bottom-200">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur assumenda, maiores incidunt,
+                    voluptatibus earum ipsum dicta illum sapiente, voluptatum quisquam impedit saepe qui commodi quis
+                    repellat? Pariatur explicabo rem accusantium.
+                </h3>
+
+                <div class="grid grid-cols-3 jus-center width-500 md:width-400 m-inline-auto">
+                    <div class="flex direction-column row-gap-75 items-center pointer">
+                        <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                            class="width-100 height-100 img-cover img-center radius-50%">
+                        <div>
+                            <h3 class="text-normal text-black">John</h3>
+                            <span class="text-first text-small">
+                                Client
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex direction-column row-gap-75 items-center pointer">
+                        <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                            class="width-100 height-100 img-cover img-center radius-50%">
+                        <div>
+                            <h3 class="text-normal text-black">John</h3>
+                            <span class="text-first text-small">
+                                Client
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex direction-column row-gap-75 items-center pointer">
+                        <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                            class="width-100 height-100 img-cover img-center radius-50%">
+                        <div>
+                            <h3 class="text-normal text-black">John</h3>
+                            <span class="text-first text-small">
+                                Client
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---------------- TESTIMONIAL 3  -->
+        <section class="p-block-500">
+            <div class="container">
+                <h2 class="text-h1 text-center text-300 letter-2 m-bottom-300">
+                    #3
+                </h2>
+                <div class="grid grid-cols-3 lg:grid-cols-2 lg:row-gap-200 column-gap-200 md:flex md:direction-column md:row-gap-100">
+
+                    <!------------ TESMONIAL ITEM 3  -->
+                    <div
+                        class="p-block-250 p-inline-150 flex direction-column items-start row-gap-150 border-third-1 boxshadow-8">
+                        <p class="text-second letter-1 text-h3 line-170">
+                            Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium.
+                            Cum luna prarere, omnes cannabises resuscitabo
+                        </p>
+                        <p class="text-h3">
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                        </p>
+                        <div class="flex items-center jus-start column-gap-75">
+                            <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                                class="width-75 height-75 img-cover img-center radius-50%">
+                           
+                            <div>
+                                <h3 class="text-normal text-first">John</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------ TESMONIAL ITEM 3  -->
+                    <div
+                        class="p-block-250 p-inline-150 flex direction-column items-start row-gap-150 border-third-1 boxshadow-8">
+                        <p class="text-second letter-1 text-h3 line-170">
+                            Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium.
+                            Cum luna prarere, omnes cannabises resuscitabo
+                        </p>
+                        <p class="text-h3">
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                        </p>
+                        <div class="flex items-center jus-start column-gap-75">
+                            <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                                class="width-75 height-75 img-cover img-center radius-50%">
+                           
+                            <div>
+                                <h3 class="text-normal text-first">John</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------ TESMONIAL ITEM 3  -->
+                    <div
+                        class="p-block-250 p-inline-150 flex direction-column items-start row-gap-150 border-third-1 boxshadow-8">
+                        <p class="text-second letter-1 text-h3 line-170">
+                            Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium.
+                            Cum luna prarere, omnes cannabises resuscitabo
+                        </p>
+                        <p class="text-h3">
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                            <i class="ri-star-fill" style="color: yellow;"></i>
+                        </p>
+                        <div class="flex items-center jus-start column-gap-75">
+                            <img src="../assets/img/person/team-16-370x334.jpg" alt="Image Client"
+                                class="width-75 height-75 img-cover img-center radius-50%">
+                           
+                            <div>
+                                <h3 class="text-normal text-first">John</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

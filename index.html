@@ -15,6 +15,92 @@
 </head>
 
 <body>
+  <!-- modal -->
+  <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
+    <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
+      <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
+        <i class="ri-close-fill"></i>
+      </div>
+
+      <div class="modal__header relative border-bottom-third-1 m-block-150">
+        <div class="modal__header-active absolute bg-first trans-transform-30"></div>
+        <div class="modal__header-container grid grid-cols-2">
+          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+            data-modal-header="login">
+            Login
+          </span>
+          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+            data-modal-header="register">
+            Register
+          </span>
+        </div>
+      </div>
+      <div class="modal__content">
+        <div class="modal__form none modal__form-active" data-modal-content="login">
+          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+            <input type="text" placeholder="Username"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <input type="password" placeholder="Password"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <a href="#"
+              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
+            <p class="text-600 text-first text-center m-block-75">
+              Or login with:
+            </p>
+            <ul class="flex column-gap-100 jus-center">
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/facebook-logo-2019.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/google-plus.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/linkedin.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/twitter.png" alt="" />
+                </a>
+              </li>
+              <li></li>
+            </ul>
+            <p class="text-center size-75 m-top-125">
+              Do not have an account?<a href="#" class="text-first">
+                Register
+              </a>
+            </p>
+          </form>
+        </div>
+        <div class="modal__form none" data-modal-content="register">
+          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+            <input type="text" placeholder="Username"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <input type="password" placeholder="Password"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <input type="password" placeholder="Password Again"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <input type="text" placeholder="Email"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <input type="text" placeholder="Phone"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+            <a href="#"
+              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
+            <p class="text-center size-75 m-top-125">
+              Do you have an account?<a href="#" class="text-first">
+                Login
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- header  -->
   <header class="header bg-first" id="header">
@@ -30,24 +116,28 @@
         </li>
       </ul>
       <ul class="flex column-gap-50 items-center md:none">
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-facebook-fill size-75 text-white"></i>
+            <i class="ri-facebook-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-twitter-fill size-75 text-white"></i>
+            <i class="ri-twitter-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-instagram-fill size-75 text-white"></i>
+            <i class="ri-instagram-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-linkedin-fill size-75 text-white"></i>
+            <i class="ri-linkedin-fill size-75 text-white"></i>
           </a>
         </li>
       </ul>
@@ -56,7 +146,7 @@
 
   <!----------------- NAV  -->
   <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
-    <div class="nav__container container flex jus-between items-center ">
+    <div class="nav__container container flex jus-between items-center">
       <!---------- HEADER LOGO  -->
       <a href="#" class="nav__logo">
         <img src="assets/img/logo.png" class="width-125" alt="Logo" />
@@ -89,7 +179,7 @@
 
             <!---------------- DROP DOWN ITEM -->
             <div
-              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
+              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
               <ul class="grid row-gap-100 lg:row-gap-0">
                 <li class="nav__item">
                   <a href="./pages/aboutus.html"
@@ -151,7 +241,7 @@
 
             <!---------------- DROP DOWN ITEM -->
             <div
-              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
               id="dropdown-item">
               <ul class="grid row-gap-100 lg:row-gap-0">
                 <li class="nav__item">
@@ -201,25 +291,22 @@
 
           <!---------- CART NAV CONTAINER  -->
           <div id="nav-cart-container"
-            class="nav__cart-container none md:block absolute top-110% -right-200%  bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
+            class="nav__cart-container opacity-0 visibility-hidden md:visibility-visible trans-opacity-30 md:block absolute top-110% -right-200% bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
             <div id="nav-cart-close" class="nav__cart-close none md:block absolute top-100 right-100 pointer">
               <i class="ri-close-line size-125"></i>
             </div>
             <h3 class="text-h3 text-upper text-second text-500 m-block-50">
               total products: <span>5</span>
             </h3>
-            <p class="text-small text-300">
-              Total price: $67.00
-            </p>
-            <hr class="m-block-75">
+            <p class="text-small text-300">Total price: $67.00</p>
+            <hr class="m-block-75" />
 
             <!------------- NAV CART LIST  -->
             <ul class="grid row-gap-75 m-bottom-100">
-
               <!------------- NAV CART ITEM  -->
               <li class="flex items-center column-gap-100">
                 <div class="width-100 height-100 p-50 bg-third hidden">
-                  <img src="assets/img/product/product-1-129x172.png" alt="">
+                  <img src="assets/img/product/product-1-129x172.png" alt="" />
                 </div>
                 <div>
                   <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -230,15 +317,11 @@
                     <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                       <i class="ri-subtract-line size-75"></i>
                     </button>
-                    <span class="text-small">
-                      2
-                    </span>
+                    <span class="text-small"> 2 </span>
                     <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                       <i class="ri-add-line size-75"></i>
                     </button>
-                    <span class="text-small text-300">
-                      $25.00
-                    </span>
+                    <span class="text-small text-300"> $25.00 </span>
                   </div>
                 </div>
               </li>
@@ -246,7 +329,7 @@
               <!------------- NAV CART ITEM  -->
               <li class="flex items-center column-gap-100">
                 <div class="width-100 height-100 p-50 bg-third hidden">
-                  <img src="assets/img/product/product-2-160x155.png" alt="">
+                  <img src="assets/img/product/product-2-160x155.png" alt="" />
                 </div>
                 <div>
                   <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -257,15 +340,11 @@
                     <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                       <i class="ri-subtract-line size-75"></i>
                     </button>
-                    <span class="text-small">
-                      2
-                    </span>
+                    <span class="text-small"> 2 </span>
                     <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
                       <i class="ri-add-line size-75"></i>
                     </button>
-                    <span class="text-small text-300">
-                      $13.00
-                    </span>
+                    <span class="text-small text-300"> $13.00 </span>
                   </div>
                 </div>
               </li>
@@ -293,22 +372,22 @@
         <li class="relative nav__login">
           <i class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
           <div
-            class="nav__login-container absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 none">
+            class="nav__login-container visibility-hidden opacity-0 absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 trans-opacity-30">
             <ul class="flex direction-column row-gap-50">
-              <li class="">
-                <a href="./login/login.html"
+              <li class="" id="login">
+                <a href="#"
                   class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                   login
                 </a>
               </li>
               <li class="">
-                <a href="./login/login.html"
+                <a href="#"
                   class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                   register
                 </a>
               </li>
+            </ul>
           </div>
-          </>
         </li>
         <li class="nav__toggle" id="nav-toggle">
           <i class="ri-menu-line none lg:block size-125 text-black hover:text-first trans-color-30 pointer"></i>
@@ -316,7 +395,6 @@
       </ul>
     </div>
   </nav>
-
 
   <!-------------- MAIN  -->
   <main class="main">
@@ -341,7 +419,7 @@
                 Sofa Store provides the best furniture and accessories for
                 homes and offices.
               </p>
-              <a href="#"
+              <a href="./shop/products.html"
                 class="text-upper text-smaller text-second bg-white p-block-100 p-inline-175 hover:text-white hover:bg-first trans-all-30">shop
                 now</a>
             </div>
@@ -359,7 +437,7 @@
                 Choose anything you need from a wide <br />
                 range of impressive home decor solutions.
               </p>
-              <a href="#"
+              <a href="./shop/products.html"
                 class="text-upper text-smaller text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">shop
                 now</a>
             </div>
@@ -377,7 +455,7 @@
                 Improve your home’s lighting with hundreds<br />
                 of products available at Sofa.
               </p>
-              <a href="#"
+              <a href="./shop/products.html"
                 class="text-upper text-smaller text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">shop
                 now</a>
             </div>
@@ -444,7 +522,7 @@
 
           <!------------ PRODUCT ITEM NEW -->
           <div
-            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 ">
+            class="product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
             <img class="width-125 height-150 img-top img-contain m-bottom-100"
               src="./assets/img/product/product-2-160x155.png" alt="" />
             <h3 class="text-normal text-upper text-300 m-bottom-75">
@@ -652,7 +730,7 @@
               <h3 class="text-small text-second">Thanh Trung</h3>
               <em class="text-title text-smaller">Founder</em>
             </div>
-            <img class="width-100" src="./assets/img/signature-1-160x55.png" alt="">
+            <img class="width-100" src="./assets/img/signature-1-160x55.png" alt="" />
           </div>
         </div>
       </div>
@@ -660,7 +738,6 @@
 
     <!------------- PORTFOLIO  -->
     <section class="portfolio p-top-400 p-bottom-350">
-
       <!------------------ TITLE  -->
       <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-250 reveal-top">
         <h2 class="p-bottom-75 text-h2 text-500 text-second letter-1 text-upper">
@@ -690,11 +767,10 @@
             <div class="grid row-gap-150 lg:row-gap-75">
               <div class="grid grid-cols-2 column-gap-150 lg:column-gap-75">
                 <div class="grid grid-rows-2 row-gap-150 lg:row-gap-75">
-
                   <!-------------- PORTFOLIO ITEM  -->
                   <div class="portfolio__item relative pointer">
                     <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-7-270x250.jpg"
-                      alt="">
+                      alt="" />
                     <div
                       class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                       <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -714,7 +790,7 @@
                   <!-------------- PORTFOLIO ITEM  -->
                   <div class="portfolio__item relative pointer">
                     <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg"
-                      alt="">
+                      alt="" />
                     <div
                       class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                       <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -735,7 +811,7 @@
                 <!-------------- PORTFOLIO ITEM  -->
                 <div class="portfolio__item relative pointer">
                   <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-5-270x530.jpg"
-                    alt="">
+                    alt="" />
                   <div
                     class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                     <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -753,10 +829,9 @@
                 </div>
               </div>
 
-
               <!-------------- PORTFOLIO ITEM  -->
               <div class="portfolio__item relative pointer">
-                <img class="img-center img-cover" src="assets/img/portfolio/portfolio-2-570x250.jpg" alt="">
+                <img class="img-center img-cover" src="assets/img/portfolio/portfolio-2-570x250.jpg" alt="" />
                 <div
                   class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                   <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -774,11 +849,10 @@
             </div>
             <div class="grid grid-rows-1:2 row-gap-150 lg:row-gap-75">
               <div class="grid grid-cols-2 column-gap-150 lg:column-gap-75">
-
                 <!-------------- PORTFOLIO ITEM  -->
                 <div class="portfolio__item relative pointer">
                   <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-3-270x250.jpg"
-                    alt="">
+                    alt="" />
                   <div
                     class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                     <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -788,17 +862,18 @@
                       class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
                       decor
                     </p>
-                    <a href="#"
-                      class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
+                    <button
+                      class="gallery portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
                       <i class="ri-search-line"></i>
-                    </a>
+                    </button>
+
                   </div>
                 </div>
-
+              
                 <!-------------- PORTFOLIO ITEM  -->
                 <div class="portfolio__item relative pointer">
                   <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-4-270x250.jpg"
-                    alt="">
+                    alt="" />
                   <div
                     class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                     <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -818,7 +893,8 @@
 
               <!-------------- PORTFOLIO ITEM  -->
               <div class="portfolio__item relative pointer">
-                <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-1-570x530.jpg" alt="">
+                <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-1-570x530.jpg"
+                  alt="" />
                 <div
                   class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
                   <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
@@ -836,15 +912,13 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
     <!------------- BLOG  -->
     <section class="blog p-top-250 p-bottom-400">
-
       <!------------------ TITLE  -->
-      <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-275  reveal-top">
+      <div class="m-inline-auto width-fit flex direction-column items-center m-bottom-275 reveal-top">
         <h2 class="p-bottom-75 text-h2 text-500 text-second letter-1 text-upper">
           blog
         </h2>
@@ -853,31 +927,30 @@
 
       <!------------------ BLOG CONTAINER  -->
       <div class="blog__container container reveal-bottom">
-        <div class="grid grid-cols-2:1 column-gap-200 lg:grid-cols-1:0 lg:column-gap-0">
-
+        <div class="grid grid-cols-3:1 column-gap-200 lg:grid-cols-1:0 lg:column-gap-0">
           <!-------------- BLOG LEFT  -->
           <div class="grid row-gap-175 grid-rows-0">
-
             <!---------------- CARD  -->
             <div class="card pointer p-bottom-100 border-bottom-third-1">
-
               <!-------------- CARD IMAGE  -->
               <div class="card__img relative hidden height-350 m-bottom-50 radius-50">
-                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg" alt="">
+                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg" alt="" />
               </div>
 
               <div class="flex jus-between m-bottom-75">
-
                 <!------------- CARD ACTION  -->
                 <div class="flex column-gap-100">
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                    <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                    October 12, 2036
                   </span>
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                    Trung
                   </span>
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                    <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                    Comments
                   </span>
                 </div>
 
@@ -895,38 +968,40 @@
                 Top 20 Interior Home Decor Trends of 2021
               </h2>
               <div class="card__description">
-                <p class=" text-small line-170">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit praesentium nihil doloremque
-                  quia
-                  ad eos consequatur reprehenderit sequi quaerat ipsum consequuntur quam repudiandae, dolorem deserunt
-                  perferendis harum sapiente saepe.
+                <p class="text-small line-170">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit praesentium nihil doloremque quia ad eos
+                  consequatur reprehenderit sequi quaerat ipsum consequuntur
+                  quam repudiandae, dolorem deserunt perferendis harum
+                  sapiente saepe.
                 </p>
-                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more <i
-                    class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
+                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more
+                  <i class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
               </div>
             </div>
 
             <!---------------- CARD  -->
             <div class="card pointer p-bottom-100 border-bottom-third-1">
-
               <!-------------- CARD IMAGE  -->
               <div class="card__img hidden height-350 m-bottom-50 radius-50">
                 <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-11-420x368 (1).jpg"
-                  alt="">
+                  alt="" />
               </div>
 
               <div class="flex jus-between m-bottom-75">
-
                 <!------------- CARD ACTION  -->
                 <div class="flex column-gap-100">
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                    <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                    October 12, 2036
                   </span>
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                    <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                    Trung
                   </span>
                   <span class="text-smaller text-300 text-second flex items-center">
-                    <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                    <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                    Comments
                   </span>
                 </div>
 
@@ -944,14 +1019,15 @@
                 How to Choose Furniture for Your Home
               </h2>
               <div class="card__description">
-                <p class=" text-small line-170">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit praesentium nihil doloremque
-                  quia
-                  ad eos consequatur reprehenderit sequi quaerat ipsum consequuntur quam repudiandae, dolorem deserunt
-                  perferendis harum sapiente saepe.
+                <p class="text-small line-170">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit praesentium nihil doloremque quia ad eos
+                  consequatur reprehenderit sequi quaerat ipsum consequuntur
+                  quam repudiandae, dolorem deserunt perferendis harum
+                  sapiente saepe.
                 </p>
-                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more <i
-                    class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
+                <a href="#" class="text-smaller text-first flex items-center column-gap-25">See more
+                  <i class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i></a>
               </div>
             </div>
           </div>
@@ -961,22 +1037,19 @@
             <form
               class="width-100% p-inline-100 p-block-75 bg-first flex jus-between items-center radius-25 m-bottom-150">
               <input type="text" placeholder="Search"
-                class="width-90% text-smaller bg-transparent text-white border-black-0 outline-none">
+                class="width-90% text-smaller bg-transparent text-white border-black-0 outline-none" />
               <button type="submit" class="bg-transparent border-black-0 text-white pointer">
                 <i class="ri-search-line"></i>
               </button>
             </form>
 
-            <h2 class="text-h2 text-first text-700 m-bottom-75">
-              News
-            </h2>
+            <h2 class="text-h2 text-first text-700 m-bottom-75">News</h2>
             <div class="grid row-gap-100 m-bottom-125">
-
               <!----------- CARD SMALL  -->
               <div class="card grid grid-cols-2 column-gap-50 pointer">
                 <div class="card__img hidden height-125 radius-25">
                   <img src="./assets/img/blog/post-12-420x368.jpg" alt="Hinh anh blog"
-                    class="img-top img-cover trans-transform-20">
+                    class="img-top img-cover trans-transform-20" />
                 </div>
                 <div>
                   <h3 class="text-normal text-second m-bottom-50 text-700">
@@ -984,13 +1057,16 @@
                   </h3>
                   <div class="grid row-gap-50">
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                      <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                      October 12, 2036
                     </span>
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                      Trung
                     </span>
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                      <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                      Comments
                     </span>
                   </div>
                 </div>
@@ -998,9 +1074,9 @@
 
               <!----------- CARD SMALL  -->
               <div class="card grid grid-cols-2 column-gap-50 pointer">
-                <div class="card__img hidden height-125  radius-25">
+                <div class="card__img hidden height-125 radius-25">
                   <img src="./assets/img/blog/post-13-420x368.jpg" alt="Hinh anh blog"
-                    class="img-bottom img-cover trans-transform-20">
+                    class="img-bottom img-cover trans-transform-20" />
                 </div>
                 <div>
                   <h3 class="text-normal text-second m-bottom-50 text-700">
@@ -1008,13 +1084,16 @@
                   </h3>
                   <div class="grid row-gap-50">
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-calendar-2-line size-100 m-right-25"></i> October 12, 2036
+                      <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                      October 12, 2036
                     </span>
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh Trung
+                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                      Trung
                     </span>
                     <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-message-2-line size-100 m-right-25"></i> 32 Comments
+                      <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                      Comments
                     </span>
                   </div>
                 </div>
@@ -1026,50 +1105,48 @@
             <ul class="grid row-gap-50 m-bottom-125">
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Livingrooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">30</span>
+                  Livingrooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">30</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Bedrooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">20</span>
+                  Bedrooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">20</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Dining rooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">15</span>
+                  Dining rooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">15</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Bathrooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">37</span>
+                  Bathrooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">37</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Decore & funiture <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">60</span>
+                  Decore & funiture
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">60</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Kid rooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">72</span>
+                  Kid rooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">72</span>
                 </a>
               </li>
               <li>
                 <a href="#" class="flex items-center text-second text-smaller letter-1 column-gap-25">
-                  Bed rooms <span
-                    class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">10</span>
+                  Bed rooms
+                  <span class="width-25 height-25 size-25 p-25 text-center text-white bg-second radius-50%">10</span>
                 </a>
               </li>
             </ul>
-            <h2 class="text-h2 text-first text-700 m-bottom-75">
-              Tags
-            </h2>
+            <h2 class="text-h2 text-first text-700 m-bottom-75">Tags</h2>
             <ul class="flex gap-50 wrap m-bottom-125">
               <li>
                 <a href="#" class="block p-inline-150 p-block-75 text-smaller text-second border-second-1 radius-125">
@@ -1108,18 +1185,15 @@
               </li>
             </ul>
             <div class="p-block-150 p-inline-100 bg-second radius-25">
-              <h3 class="text-h3 text-white m-bottom-150">
-                Contact
-              </h3>
+              <h3 class="text-h3 text-white m-bottom-150">Contact</h3>
               <form action="" class="width-100% bg-first p-inline-100 p-block-75 m-bottom-100 radius-25">
                 <input type="text" placeholder="Your Email"
-                  class="border-black-0 outline-none bg-transparent text-smaller text-white">
+                  class="border-black-0 outline-none bg-transparent text-smaller text-white" />
               </form>
               <button type="submit"
                 class="p-block-100 width-100% radius-150 bg-white border-first-1 text-first pointer text-700">
                 Subscribe
               </button>
-
             </div>
           </div>
         </div>
@@ -1131,7 +1205,6 @@
       <div class="container p-block-150">
         <div class="swiper saleSwiper">
           <div class="swiper-wrapper">
-
             <!------------ PRODUCT ITEM  SALE-->
             <div
               class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
@@ -1250,7 +1323,6 @@
                 sale
               </span>
             </div>
-
           </div>
           <div class="swiper-button-next sale__icon-next bg-first width-50 height-50 radius-50% md:none">
             <i class="ri-arrow-right-s-line size-125 text-white"></i>
@@ -1265,11 +1337,11 @@
 
   <!----------- FOOTER  -->
   <footer class="footer p-top-300 p-bottom-400 bg-second reveal-left">
-    <div class="footer__container container grid grid-cols-3 column-gap-100 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
-
+    <div
+      class="footer__container container grid grid-cols-3 column-gap-200 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
       <!------------ FOOTER ITEM  -->
       <div class="footer__item">
-        <img src="assets/img/logofooter.png" alt="" class="width-100 m-bottom-100 sm:width-150">
+        <img src="assets/img/logofooter.png" alt="" class="width-100 m-bottom-100 sm:width-150" />
         <div class="flex column-gap-100 text-title text-small m-bottom-25">
           <span>Weekdays:</span>
           <span>08:00am - 08:00pm</span>
@@ -1280,9 +1352,7 @@
         </div>
         <div class="footer__line width-225 m-block-100"></div>
         <div class="flex column-gap-150">
-          <span class="text-white">
-            Get Social
-          </span>
+          <span class="text-white"> Get Social </span>
           <ul class="flex column-gap-75">
             <li>
               <a href="#" class="text-white">
@@ -1317,9 +1387,7 @@
           </li>
           <li class="flex column-gap-100 items-center">
             <i class="ri-phone-line text-first size-100"></i>
-            <span class="text-title text-small">
-              (+84) 937 022 915
-            </span>
+            <span class="text-title text-small"> (+84) 937 022 915 </span>
           </li>
           <li class="flex column-gap-100 items-center">
             <i class="ri-mail-line text-first size-100"></i>
@@ -1336,11 +1404,12 @@
           NEWSLETTER
         </h3>
         <p class="text-small text-title m-bottom-100">
-          Subscribe to our newsletter to receive weekly news, updates, special offers, and exclusive discounts.
+          Subscribe to our newsletter to receive weekly news, updates, special
+          offers, and exclusive discounts.
         </p>
         <form action="" class="bg-first p-inline-100 p-block-75 flex jus-between">
           <input class="width-90% outline-none border-black-0 bg-transparent text-white text-smaller"
-            placeholder="Enter your email" type="text">
+            placeholder="Enter your email" type="text" />
           <i class="ri-send-plane-fill text-white pointer"></i>
         </form>
       </div>

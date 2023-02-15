@@ -15,6 +15,95 @@
 </head>
 
 <body>
+
+  <!-- modal -->
+  <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
+    <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
+      <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
+        <i class="ri-close-fill"></i>
+      </div>
+
+      <div class="modal__header relative border-bottom-third-1 m-block-150">
+        <div class="modal__header-active absolute bg-first trans-transform-30"></div>
+        <div class="modal__header-container grid grid-cols-2">
+          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+            data-modal-header="login">
+            Login
+          </span>
+          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+            data-modal-header="register">
+            Register
+          </span>
+        </div>
+      </div>
+      <div class="modal__content">
+        <div class="modal__form none modal__form-active" data-modal-content="login">
+          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+            <input type="text" placeholder="Username"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <input type="password" placeholder="Password"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <a href="#"
+              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
+            <p class="text-600 text-first text-center m-block-75">
+              Or login with:
+            </p>
+            <ul class="flex column-gap-100 jus-center">
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/facebook-logo-2019.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/google-plus.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/linkedin.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block height-25 width-25">
+                  <img src="./assets/img/social/twitter.png" alt="">
+                </a>
+              </li>
+              <li></li>
+            </ul>
+            <p class="text-center size-75 m-top-125">
+              Do not have an account?<a href="#" class="text-first">
+                Register
+              </a>
+            </p>
+          </form>
+        </div>
+        <div class="modal__form none" data-modal-content="register">
+          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+            <input type="text" placeholder="Username"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <input type="password" placeholder="Password"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <input type="password" placeholder="Password Again"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <input type="text" placeholder="Email"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <input type="text" placeholder="Phone"
+              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%">
+            <a href="#"
+              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
+            <p class="text-center size-75 m-top-125">
+              Do you have an account?<a href="#" class="text-first">
+                Login
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- header  -->
   <header class="header bg-first" id="header">
     <div class="header__container container flex jus-between items-center">
@@ -29,24 +118,28 @@
         </li>
       </ul>
       <ul class="flex column-gap-50 items-center md:none">
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-facebook-fill size-75 text-white"></i>
+            <i class="ri-facebook-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-twitter-fill size-75 text-white"></i>
+            <i class="ri-twitter-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-instagram-fill size-75 text-white"></i>
+            <i class="ri-instagram-fill size-75 text-white"></i>
           </a>
         </li>
-        <li class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
+        <li
+          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
           <a href="#">
-              <i class="ri-linkedin-fill size-75 text-white"></i>
+            <i class="ri-linkedin-fill size-75 text-white"></i>
           </a>
         </li>
       </ul>
@@ -88,7 +181,7 @@
 
             <!---------------- DROP DOWN ITEM -->
             <div
-              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
+              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
               <ul class="grid row-gap-100 lg:row-gap-0">
                 <li class="nav__item">
                   <a href="./pages/aboutus.html"
@@ -150,7 +243,7 @@
 
             <!---------------- DROP DOWN ITEM -->
             <div
-              class="dropdown-item bg-white none absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
               id="dropdown-item">
               <ul class="grid row-gap-100 lg:row-gap-0">
                 <li class="nav__item">
@@ -200,7 +293,7 @@
 
           <!---------- CART NAV CONTAINER  -->
           <div id="nav-cart-container"
-            class="nav__cart-container none md:block absolute top-110% -right-200%  bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
+            class="nav__cart-container opacity-0 visibility-hidden  md:visibility-visible  trans-opacity-30 md:block absolute top-110% -right-200%  bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
             <div id="nav-cart-close" class="nav__cart-close none md:block absolute top-100 right-100 pointer">
               <i class="ri-close-line size-125"></i>
             </div>
@@ -292,16 +385,16 @@
         <li class="relative nav__login">
           <i class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
           <div
-            class="nav__login-container absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 none">
+            class="nav__login-container visibility-hidden opacity-0 absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 trans-opacity-30">
             <ul class="flex direction-column row-gap-50">
-              <li class="">
-                <a href="./login/login.html"
+              <li class="" id="login">
+                <a href="#"
                   class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                   login
                 </a>
               </li>
               <li class="">
-                <a href="./login/login.html"
+                <a href="#"
                   class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                   register
                 </a>
@@ -316,6 +409,7 @@
     </div>
   </nav>
 
+
   <!-------------- MAIN  -->
   <main class="main">
 
@@ -323,7 +417,8 @@
 
   <!----------- FOOTER  -->
   <footer class="footer p-top-300 p-bottom-400 bg-second reveal-left">
-    <div class="footer__container container grid grid-cols-3 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
+    <div
+      class="footer__container container grid grid-cols-3 column-gap-200 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
 
       <!------------ FOOTER ITEM  -->
       <div class="footer__item">

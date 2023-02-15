@@ -158,7 +158,7 @@
         id="nav-menu">
         <ul class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center">
           <!------------ LINK  -->
-          <li class="nav__item pointer">
+          <li class="nav__item pointe">
             <a href="index.html"
               class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
               Home
@@ -210,7 +210,7 @@
           </li>
 
           <!------------ LINK  -->
-          <li class="nav__item pointer">
+          <li class="nav__item pointer active">
             <a href="./blog.html"
               class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
               blog
@@ -220,7 +220,7 @@
           </li>
 
           <!------------ LINK  -->
-          <li class="nav__item pointer active">
+          <li class="nav__item pointer">
             <a href="./gallery.html"
               class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
               gallery
@@ -398,6 +398,7 @@
 
   <!-------------- MAIN  -->
   <main class="main">
+    <!-- TITLE PAGE  -->
     <section class="section-page">
       <div style="
             background-image: linear-gradient(
@@ -408,165 +409,469 @@
           " class="section-background text-center bg-center bg-cover bg-fixed">
         <div class="container">
           <h2 class="text-h2 text-white text-upper text-500 m-bottom-125 letter-1">
-            gallery
+            blog post
           </h2>
-          <p
-            class="text-small text-white text-300 text-white text-center width-500 sm:width-450 m-inline-auto letter-1">
-            Quisque ullamcorper nulla magna, vitae tincidunt ipsum interdum
-            nec sit amet fermentum pellentesque, pulvinar non tellus.
-          </p>
         </div>
       </div>
       <div class="flex jus-center items-center column-gap-50 p-block-100 bg-third">
         <span class="text-smaller text-second text-upper text-600">Home</span>
         <i class="ri-arrow-right-line size-75 text-second"></i>
-        <span class="text-smaller text-first text-upper text-600">Gallery</span>
+        <span class="text-smaller text-second text-upper text-600">blog</span>
+        <i class="ri-arrow-right-line size-75 text-second"></i>
+        <span class="text-smaller text-first text-upper text-600">blog post</span>
       </div>
     </section>
 
-    <!------------ CONTENT GALLERY  -->
-    <section class="p-block-400 reveal-bottom">
+    <!--------------- CONTENT  -------------->
+    <section class="p-block-400">
       <div class="container">
+        <div class="grid grid-cols-2:1 lg:grid-cols-1:0 column-gap-300 lg:column-gap-0">
 
-        <!-------------- MENU GALLERY  -->
-        <ul class="gallery__menu flex column-gap-100 jus-center m-bottom-200">
-          <li data-gallery-item="all"
-            class="gallery__item border-first-1 text-first text-smaller p-block-75 p-inline-125 hover:bg-first hover:text-white pointer trans-all-20 gallery-active text-upper">
-            all
-          </li>
-          <li data-gallery-item="decor"
-            class="gallery__item border-first-1 text-first text-smaller p-block-75 p-inline-125 hover:bg-first hover:text-white pointer trans-all-20 text-upper">
-            decor
-          </li>
-          <li data-gallery-item="furniture"
-            class="gallery__item border-first-1 text-first text-smaller p-block-75 p-inline-125 hover:bg-first hover:text-white pointer trans-all-20 text-upper">
-            furniture
-          </li>
-        </ul>
+          <!----------- LEFT CONTENT  -->
+          <div class="reveal-left">
+            <!---------- CARD BLOG  -->
 
-        <!-------------- CONTAINER GALLERY  -->
-        <div class="grid grid-cols-3:300 lg:grid-cols-3:200 md:grid-cols-2:200 gap-100 lg:gap-100 jus-center">
+            <div class="grid row-gap-200">
+              <!---------------- CARD  -->
+              <div class="grid row-gap-150 card pointer p-bottom-100">
+                <!------------- DATE  -->
+                <div class="m-bottom-150">
+                  <span class="text-upper text-smaller relative text-second">
+                    <div class="absolute bottom-0 left-0 bg-first width-90% radius-50" style="height: 5px; z-index: -1">
+                    </div>
+                    news
+                  </span>
+                  <span class="text-title text-small m-left-100 p-left-100 border-left-title-1">August 9, 2021</span>
+                </div>
 
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="decor"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
-              </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
-              </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
+                <!-------------- CARD TITLE  -->
+                <h2 class="text-h2 text-500 text-second">
+                  Top 20 Interior Home Decor Trends of 2021
+                </h2>
+
+                <!-------------- CARD IMAGE  -->
+                <div class="card__img relative hidden height-350 radius-50">
+                  <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg"
+                    alt="" />
+                </div>
+
+                <p class="card__description text-300 text-second text-small line-170">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit praesentium nihil doloremque quia ad eos
+                  consequatur reprehenderit sequi quaerat ipsum consequuntur
+                  quam repudiandae, dolorem deserunt perferendis harum
+                  sapiente saepe.
+                </p>
+
+                <p class="text-second text-300 text-small line-170">
+                  At vero eos et accusam et justo duo dolores et ea rebum.
+                  Stet clita kasd gubergren, no sea takimata sanctus est
+                  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                  invidunt ut labore et dolore magna aliquyam erat, sed diam
+                  voluptua. At vero eos et accusam et justo duo dolores et
+                  ea rebum. Stet clita kasd gubergren, no sea takimata
+                  sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+                  gubergren, no sea takimata sanctus est
+                </p>
+
+                <div class="flex p-inline-150">
+                  <p class="size-150 text-400"> <i class="ri-double-quotes-l"></i> With a new year come new decorating
+                    patterns, stylish, timeless pieces, and fresh takes on old styles. <i
+                      class="ri-double-quotes-r"></i></p>
+                </div>
+
+                <p class="text-second text-small text-300 line-170">
+                  Phasellus sit amet consequat ante. Nulla mattis magna at mi ultrices vulputate. Phasellus ac diam sit
+                  amet justo tincidunt lacinia eu nec magna. Curabitur dapibus pellentesque ex, quis mattis sapien.
+                  Curabitur orci lorem, porttitor sed enim non, varius volutpat felis. Vestibulum euismod ex quis
+                  ultricies rhoncus. Phasellus eget egestas ipsum.
+                </p>
+                <div class="line bg-third m-25"></div>
+
+                <!--------------- SOCIAL -->
+                <div class="flex items-center jus-between">
+                  <ul class="flex column-gap-100">
+                    <li>
+                      <a href="#" class="text-smaller text-second text-upper text-600 hover:text-first trans-color-20">
+                        new
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-smaller text-second text-upper text-600 hover:text-first trans-color-20">
+                        interior
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-smaller text-second text-upper text-600 hover:text-first trans-color-20">
+                        tips
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="flex column-gap-100 items-center">
+                    <li>
+                      <a href="#" class="text-small text-second text-300 hover:text-first trans-color-20">
+                        Share:
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-small text-black text-upper text-600 hover:text-first trans-color-20">
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-small text-black text-upper text-600 hover:text-first trans-color-20">
+                        <i class="ri-instagram-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-small text-black text-upper text-600 hover:text-first trans-color-20">
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-small text-black text-upper text-600 hover:text-first trans-color-20">
+                        <i class="ri-youtube-fill"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!----------- RELATED BLOG LEFT CONTENT  -->
+              <div>
+                <h3 class="text-small text-upper text-second text-500 m-bottom-150">
+                  RELATED POSTS
+                </h3>
+
+                <!--------------- CONTAINER RELATED BLOG  -->
+                <div
+                  class="grid grid-cols-2 md:grid-cols-1:450 md:jus-center md:row-gap-200 jus-between column-gap-100">
+
+                  <!--------------- CARD ITEM RELATED  -->
+                  <a href="#" class="card">
+                    <!-------------- CARD IMAGE  -->
+                    <div class="card__img relative hidden height-250">
+                      <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg"
+                        alt="" />
+                    </div>
+
+                    <!--------------- CARD INFO  -->
+                    <div class="bg-third p-225 flex direction-column row-gap-100">
+                      <span class="text-title text-smaller">
+                        August 9, 2021
+                      </span>
+                      <h3 class="text-h3 text-400 text-second">
+                        How to Choose Furniture for Your Home
+                      </h3>
+                      <p class="text-title text-small text-300 line-140">
+                        Est velox nuptia, cesaris. Est dexter turpis, cesaris. Cum nixus persuadere, omnes fluctuies
+                        promissio flavum
+                      </p>
+                    </div>
+                  </a>
+
+                  <!--------------- CARD ITEM RELATED  -->
+                  <a href="#" class="card">
+                    <!-------------- CARD IMAGE  -->
+                    <div class="card__img relative hidden height-250">
+                      <img class="img-cover img-center trans-transform-20" src="assets/img/blog/post-10-420x368.jpg"
+                        alt="" />
+                    </div>
+
+                    <!--------------- CARD INFO  -->
+                    <div class="bg-third p-225 flex direction-column row-gap-100">
+                      <span class="text-title text-smaller">
+                        August 9, 2021
+                      </span>
+                      <h3 class="text-h3 text-400 text-second">
+                        How to Choose Furniture for Your Home
+                      </h3>
+                      <p class="text-title text-small text-300 line-140">
+                        Est velox nuptia, cesaris. Est dexter turpis, cesaris. Cum nixus persuadere, omnes fluctuies
+                        promissio flavum
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!---------------- COMMENT  -->
+              <div>
+                <h3 class="text-300 text-normal text-upper m-bottom-150 sm:text-center">3 comments</h3>
+
+                <!----------- CONTAINER COMMENT  -->
+                <div class="flex direction-column row-gap-150">
+
+                  <!------------- COMMENT ITEM  -->
+                  <div
+                    class="flex height-100% column-gap-125 p-bottom-125 border-bottom-third-1 md:direction-column md:row-gap-75">
+                    <img src="./assets/img/person/team-15-370x334.jpg" class="width-100 height-100 img-cover img-center"
+                      alt="">
+                    <div class="p-top-25">
+                      <div class="m-bottom-75">
+                        <div>
+                          <a href="#"
+                            class="text-h3 text-second hover:text-first p-right-50 m-right-50 border-right-third-1 trans-color-20">
+                            Thanh Quan
+                          </a>
+                          <a href="#"
+                            class="text-first hover:text-second text-600 text-smaller text-upper trans-color-20">reply</a>
+                        </div>
+                      </div>
+                      <p class="text-title text-small text-300 line-140">
+                        Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum
+                        nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique
+                        cum te.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!------------- COMMENT ITEM  -->
+                  <div
+                    class="flex height-100% column-gap-125 p-bottom-125 border-bottom-third-1 md:direction-column md:row-gap-75">
+                    <img src="./assets/img/person/team-17-370x334.jpg" class="width-100 height-100 img-cover img-center"
+                      alt="">
+                    <div class="p-top-25">
+                      <div class="m-bottom-75">
+                        <div>
+                          <a href="#"
+                            class="text-h3 text-second hover:text-first p-right-50 m-right-50 border-right-third-1 trans-color-20">
+                            Jonh Deep
+                          </a>
+                          <a href="#"
+                            class="text-first hover:text-second text-600 text-smaller text-upper trans-color-20">reply</a>
+                        </div>
+                      </div>
+                      <p class="text-title text-small text-300 line-140">
+                        Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum
+                        nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique
+                        cum te.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!------------- COMMENT ITEM  -->
+                  <div
+                    class="flex height-100% column-gap-125 p-bottom-125 border-bottom-third-1 md:direction-column md:row-gap-75">
+                    <img src="./assets/img/person/team-4-270x227.jpg" class="width-100 height-100 img-cover img-center"
+                      alt="">
+                    <div class="p-top-25">
+                      <div class="m-bottom-75">
+                        <div>
+                          <a href="#"
+                            class="text-h3 text-second hover:text-first p-right-50 m-right-50 border-right-third-1 trans-color-20">
+                            Recbbeca
+                          </a>
+                          <a href="#"
+                            class="text-first hover:text-second text-600 text-smaller text-upper trans-color-20">reply</a>
+                        </div>
+                      </div>
+                      <p class="text-title text-small text-300 line-140">
+                        Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum
+                        nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique
+                        cum te.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+                <form action=""
+                  class="bg-white border-third-1 p-block-75 p-inline-75 flex jus-between items-center m-top-100">
+                  <input type="text" placeholder="Your comment!!"
+                    class="text-smaller bg-transparent border-initial-0 outline-none placeholder:text-title width-60%">
+                  <ul class="flex column-gap-75">
+                    <li>
+                      <a href="#">
+                        <i class="ri-picture-in-picture-line text-second hover:text-first trans-color-20"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ri-send-plane-fill text-second hover:text-first trans-color-20"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+
+
+
             </div>
           </div>
 
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="furniture"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
+          <!------------- RIGHT CONTENT  -->
+          <div class="flex direction-column row-gap-300 lg:none reveal-right">
+            <!------------ AUTHOR  -->
+            <div class="flex direction-column row-gap-100 items-center jus-center p-block-250 border-title-1">
+              <img src="./assets/img/person/team-15-370x334.jpg"
+                class="width-125 height-125 img-center img-cover radius-50%" alt="Hinh anh avatar" />
+              <h3 class="text-normal hover:text-first trans-color-30 pointer">
+                REBECCA HARISON
               </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
+              <p class="text-small width-200 text-center text-300">
+                Europe's top designer, elite interior designer.
               </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
+            </div>
+
+            <!-------------- SEARCH BLOG  -->
+            <div class="flex jus-between items-center p-block-125 p-inline-100 bg-third">
+              <input type="text" placeholder="Search Blog"
+                class="bg-transparent outline-none border-initial-0 text-title placeholder:text-title" />
+              <i class="ri-search-2-line size-100 text-second pointer"></i>
+            </div>
+
+            <!---------------- CATEGORIES  -->
+            <div>
+              <h3 class="text-small text-upper text-second text-500">
+                categories
+              </h3>
+              <div class="line bg-third width-100% m-block-100"></div>
+              <ul class="flex direction-column row-gap-100">
+                <li class="flex items-center jus-between text-smaller">
+                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">All</a>
+                  <span>(18)</span>
+                </li>
+                <li class="flex items-center jus-between text-smaller">
+                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">News</a>
+                  <span>(9)</span>
+                </li>
+                <li class="flex items-center jus-between text-smaller">
+                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">Tips</a>
+                  <span>(5)</span>
+                </li>
+                <li class="flex items-center jus-between text-smaller">
+                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">Furniture</a>
+                  <span>(8)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!--------------- LAST POSTED  -->
+            <div>
+              <h3 class="text-small text-upper text-second text-500">
+                lasted post
+              </h3>
+              <div class="line bg-third width-100% m-block-100"></div>
+              <div class="grid row-gap-100 m-bottom-125">
+                <!----------- CARD SMALL  -->
+                <a href="#" class="card grid grid-cols-2 column-gap-50 pointer">
+                  <div class="card__img hidden height-125 radius-25">
+                    <img src="./assets/img/blog/post-12-420x368.jpg" alt="Hinh anh blog"
+                      class="img-top img-cover trans-transform-20" />
+                  </div>
+                  <div>
+                    <h3 class="text-normal text-second m-bottom-50 text-700">
+                      LED Lighting and Its Benefits
+                    </h3>
+                    <div class="grid row-gap-50">
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                        October 12, 2036
+                      </span>
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-user-2-line size-100 m-right-25"></i>
+                        Thanh Trung
+                      </span>
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-message-2-line size-100 m-right-25"></i>
+                        32 Comments
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+                <!----------- CARD SMALL  -->
+                <a href="#" class="card grid grid-cols-2 column-gap-50 pointer">
+                  <div class="card__img hidden height-125 radius-25">
+                    <img src="./assets/img/blog/post-13-420x368.jpg" alt="Hinh anh blog"
+                      class="img-bottom img-cover trans-transform-20" />
+                  </div>
+                  <div>
+                    <h3 class="text-normal text-second m-bottom-50 text-700">
+                      What to Look for When Shopping
+                    </h3>
+                    <div class="grid row-gap-50">
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                        October 12, 2036
+                      </span>
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-user-2-line size-100 m-right-25"></i>
+                        Thanh Trung
+                      </span>
+                      <span class="text-smaller text-300 text-second flex items-center">
+                        <i class="ri-message-2-line size-100 m-right-25"></i>
+                        32 Comments
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!--------------- POPULAR TAG  -->
+            <div>
+              <h3 class="text-small text-upper text-second text-500">
+                popular tag
+              </h3>
+              <div class="line bg-third width-100% m-block-100"></div>
+              <div class="flex wrap column-gap-175 row-gap-100">
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  news
+                </a>
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  furniture
+                </a>
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  decor
+                </a>
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  tips
+                </a>
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  interior
+                </a>
+                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
+                  lighting
+                </a>
+              </div>
+            </div>
+
+            <!------------- ARCHIVE  -->
+            <div>
+              <h3 class="text-small text-upper text-second text-500">
+                ARCHIVE
+              </h3>
+              <div class="line bg-third width-100% m-block-100"></div>
+              <ul class="flex direction-column row-gap-75">
+                <li class="flex items-center column-gap-100">
+                  <i class="ri-edit-circle-fill text-first"></i>
+                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
+                    March 2023
+                  </a>
+                </li>
+                <li class="flex items-center column-gap-100">
+                  <i class="ri-edit-circle-fill text-first"></i>
+                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
+                    February 2023
+                  </a>
+                </li>
+                <li class="flex items-center column-gap-100">
+                  <i class="ri-edit-circle-fill text-first"></i>
+                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
+                    January 2023
+                  </a>
+                </li>
+                <li class="flex items-center column-gap-100">
+                  <i class="ri-edit-circle-fill text-first"></i>
+                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
+                    December 2023
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="decor"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
-              </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
-              </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="furniture"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
-              </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
-              </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="decor"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
-              </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
-              </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-------------- PORTFOLIO ITEM  -->
-          <div data-gallery-img="furniture"
-            class="portfolio__item gallery__img relative pointer height-300 lg:height-200 md:height-200">
-            <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-6-270x250.jpg" alt="" />
-            <div
-              class="portfolio__overlay text-center opacity-0 absolute top-0 left-0 width-100% height-100% flex direction-column items-center jus-center row-gap-50 z-10 trans-all-20">
-              <h3 class="portfolio__title opacity-0 text-upper text-h3 text-400 text-white trans-all-50">
-                newyork public library
-              </h3>
-              <p class="portfolio__type opacity-0 text-upper text-normal text-400 text-first text-700 trans-all-50">
-                decor
-              </p>
-              <a href="#"
-                class="portfolio__search opacity-0 size-125 flex jus-center items-center width-50 height-50 radius-50% bg-white text-second hover:bg-first hover:text-white trans-all-20">
-                <i class="ri-search-line"></i>
-              </a>
-            </div>
-          </div>
-
         </div>
-
-
-      </div>
-
-
       </div>
     </section>
 
@@ -574,7 +879,7 @@
     <section class="sale">
       <div class="container p-block-150">
         <h2 class="m-bottom-225 text-upper text-400 p-bottom-100 border-bottom-third-1 letter-1">
-          selling products
+          product sale
         </h2>
         <div class="swiper saleSwiper">
           <div class="swiper-wrapper">
