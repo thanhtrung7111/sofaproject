@@ -15,92 +15,92 @@
 </head>
 
 <body>
-    <!-- modal -->
-    <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
-        <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
-            <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
-                <i class="ri-close-fill"></i>
-            </div>
+   <!-- modal -->
+   <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
+    <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
+        <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
+            <i class="ri-close-fill"></i>
+        </div>
 
-            <div class="modal__header relative border-bottom-third-1 m-block-150">
-                <div class="modal__header-active absolute bg-first trans-transform-30"></div>
-                <div class="modal__header-container grid grid-cols-2">
-                    <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
-                        data-modal-header="login">
-                        Login
-                    </span>
-                    <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
-                        data-modal-header="register">
-                        Register
-                    </span>
-                </div>
+        <div class="modal__header relative border-bottom-third-1 m-block-150">
+            <div class="modal__header-active absolute bg-first trans-transform-30"></div>
+            <div class="modal__header-container grid grid-cols-2">
+                <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+                    data-modal-header="login">
+                    Login
+                </span>
+                <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+                    data-modal-header="register">
+                    Register
+                </span>
             </div>
-            <div class="modal__content">
-                <div class="modal__form none modal__form-active" data-modal-content="login">
-                    <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
-                        <input type="text" placeholder="Username"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <input type="password" placeholder="Password"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <a href="#"
-                            class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
-                        <p class="text-600 text-first text-center m-block-75">
-                            Or login with:
-                        </p>
-                        <ul class="flex column-gap-100 jus-center">
-                            <li>
-                                <a href="#" class="block height-25 width-25">
-                                    <img src="./assets/img/social/facebook-logo-2019.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block height-25 width-25">
-                                    <img src="./assets/img/social/google-plus.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block height-25 width-25">
-                                    <img src="./assets/img/social/linkedin.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block height-25 width-25">
-                                    <img src="./assets/img/social/twitter.png" alt="" />
-                                </a>
-                            </li>
-                            <li></li>
-                        </ul>
-                        <p class="text-center size-75 m-top-125">
-                            Do not have an account?<a href="#" class="text-first">
-                                Register
+        </div>
+        <div class="modal__content">
+            <div class="modal__form none modal__form-active" data-modal-content="login">
+                <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+                    <input type="text" placeholder="Username"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <input type="password" placeholder="Password"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <a href="#"
+                        class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
+                    <p class="text-600 text-first text-center m-block-75">
+                        Or login with:
+                    </p>
+                    <ul class="flex column-gap-100 jus-center">
+                        <li>
+                            <a href="#" class="block height-25 width-25">
+                                <img src="../assets/img/social/facebook-logo-2019.png" alt="" />
                             </a>
-                        </p>
-                    </form>
-                </div>
-                <div class="modal__form none" data-modal-content="register">
-                    <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
-                        <input type="text" placeholder="Username"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <input type="password" placeholder="Password"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <input type="password" placeholder="Password Again"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <input type="text" placeholder="Email"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <input type="text" placeholder="Phone"
-                            class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-                        <a href="#"
-                            class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
-                        <p class="text-center size-75 m-top-125">
-                            Do you have an account?<a href="#" class="text-first">
-                                Login
+                        </li>
+                        <li>
+                            <a href="#" class="block height-25 width-25">
+                                <img src="../assets/img/social/google-plus.png" alt="" />
                             </a>
-                        </p>
-                    </form>
-                </div>
+                        </li>
+                        <li>
+                            <a href="#" class="block height-25 width-25">
+                                <img src="../assets/img/social/linkedin.png" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block height-25 width-25">
+                                <img src="../assets/img/social/twitter.png" alt="" />
+                            </a>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <p class="text-center size-75 m-top-125">
+                        Do not have an account?<a href="#" class="text-first">
+                            Register
+                        </a>
+                    </p>
+                </form>
+            </div>
+            <div class="modal__form none" data-modal-content="register">
+                <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
+                    <input type="text" placeholder="Username"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <input type="password" placeholder="Password"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <input type="password" placeholder="Password Again"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <input type="text" placeholder="Email"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <input type="text" placeholder="Phone"
+                        class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
+                    <a href="#"
+                        class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
+                    <p class="text-center size-75 m-top-125">
+                        Do you have an account?<a href="#" class="text-first">
+                            Login
+                        </a>
+                    </p>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
     <!-- header  -->
     <header class="header bg-first" id="header">
@@ -148,7 +148,7 @@
     <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
         <div class="nav__container container flex jus-between items-center">
             <!---------- HEADER LOGO  -->
-            <a href="#" class="nav__logo">
+            <a href="../index.html" class="nav__logo">
                 <img src="../assets/img/logo.png" class="width-125" alt="Logo" />
             </a>
 
@@ -157,7 +157,7 @@
                 id="nav-menu">
                 <ul class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center">
                     <!------------ LINK  -->
-                    <li class="nav__item pointer active">
+                    <li class="nav__item pointer">
                         <a href="../index.html"
                             class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                             Home
@@ -261,7 +261,7 @@
                                         single product
                                     </a>
                                 </li>
-                                <li class="nav__item">
+                                <li class="nav__item active">
                                     <a href="./shopcart.html"
                                         class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
                                         cart page
@@ -312,7 +312,7 @@
                             <!------------- NAV CART ITEM  -->
                             <li class="flex items-center column-gap-100">
                                 <div class="width-100 height-100 p-50 bg-third hidden">
-                                    <img src="assets/img/product/product-1-129x172.png" alt="" />
+                                    <img src="../assets/img/product/product-1-129x172.png" alt="" />
                                 </div>
                                 <div>
                                     <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -337,7 +337,7 @@
                             <!------------- NAV CART ITEM  -->
                             <li class="flex items-center column-gap-100">
                                 <div class="width-100 height-100 p-50 bg-third hidden">
-                                    <img src="assets/img/product/product-2-160x155.png" alt="" />
+                                    <img src="../assets/img/product/product-2-160x155.png" alt="" />
                                 </div>
                                 <div>
                                     <h3 class="text-normal text-upper text-300 m-bottom-100">
@@ -361,11 +361,11 @@
                         </ul>
 
                         <div class="nav__card-action flex column-gap-100">
-                            <a href="./shop/shopcart.html"
+                            <a href="../shop/shopcart.html"
                                 class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
                                 go to card
                             </a>
-                            <a href="./shop/checkout.html"
+                            <a href="../shop/checkout.html"
                                 class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
                                 check out
                             </a>
@@ -460,12 +460,12 @@
                                             class="img-center img-cover width-70%">
                                     </div>
                                     <a href="#" class="text-upper text-h3 text-second hover:text-first">
-                                        white club chair
+                                        white pot flowers
                                     </a>
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $23.00
                             </td>
                             <td>
                                 <div class="flex items-center column-gap-75">
@@ -477,23 +477,23 @@
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $23.00
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div class="flex column-gap-100 items-center">
                                     <div class="height-125 width-125 md:height-75 flex items-center jus-center hidden bg-third">
-                                        <img src="../assets/img/product/product-1-129x172.png" alt=""
+                                        <img src="../assets/img/product/product-2-160x155.png" alt=""
                                             class="img-center img-cover width-70%">
                                     </div>
                                     <a href="#" class="text-upper text-h3 text-second hover:text-first">
-                                        white club chair
+                                         club chair
                                     </a>
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $30.00
                             </td>
                             <td>
                                 <div class="flex items-center column-gap-75">
@@ -505,23 +505,23 @@
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $30.00
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div class="flex column-gap-100 items-center">
                                     <div class="height-125 width-125 md:height-75 flex items-center jus-center hidden bg-third">
-                                        <img src="../assets/img/product/product-1-129x172.png" alt=""
+                                        <img src="../assets/img/product/product-5-131x168.png" alt=""
                                             class="img-center img-cover width-70%">
                                     </div>
                                     <a href="#" class="text-upper text-h3 text-second hover:text-first">
-                                        white club chair
+                                       Table Lamp fashion
                                     </a>
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $25.00
                             </td>
                             <td>
                                 <div class="flex items-center column-gap-75">
@@ -533,7 +533,7 @@
                                 </div>
                             </td>
                             <td>
-                                $20.00
+                                $25.00
                             </td>
                         </tr>
                     </tbody>
@@ -549,7 +549,7 @@
                             <span>Total:</span>
                             <span class="text-h2">$37</span>
                         </div>
-                        <a type="submit" placeholder="Code Sale" class="text-upper text-smaller text-white bg-first hover:text-first hover:bg-white p-inline-250 p-block-125 placeholder:text-title outline-none border-first-1 trans-all-30 pointer">Check out</a>
+                        <a href="./checkout.html" placeholder="Code Sale" class="text-upper text-smaller text-white bg-first hover:text-first hover:bg-white p-inline-250 p-block-125 placeholder:text-title outline-none border-first-1 trans-all-30 pointer">Check out</a>
                     </div>
                 </div>
             </div>
