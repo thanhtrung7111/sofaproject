@@ -7,16 +7,106 @@
     <title>Document</title>
   </head>
   <body>
-    <div
-      class="fb-like"
-      data-href="https://developers.facebook.com/docs/plugins/"
-      data-width=""
-      data-layout=""
-      data-action=""
-      data-size=""
-      data-share="true"
-    ></div>
+    <div style="display: flex; flex-direction: column; align-items: center;row-gap: 10px;">
+
+      <!-- Nhúng post  -->
+      <h2 style="margin-bottom: 20px;">Bài viết</h2>
+      <div
+        class="fb-post"
+        data-href="https://www.facebook.com/trung.7.1999/posts/1831321100391845"
+        data-width="500"
+        data-show-text="true"
+      >
+        <blockquote
+          cite="https://www.facebook.com/trung.7.1999/posts/1831321100391845"
+          class="fb-xfbml-parse-ignore"
+        >
+          Người đăng:
+          <a href="https://www.facebook.com/trung.7.1999">Đỗ Thành</a>
+          vào&nbsp;<a
+            href="https://www.facebook.com/trung.7.1999/posts/1831321100391845"
+            >Chủ nhật, 3 tháng 10, 2021</a
+          >
+        </blockquote>
+      </div>
+      <!-- Nhúng like  -->
+      <div
+        class="fb-like"
+        data-href="https://thanhtrung7111.github.io/sofaproject/"
+        data-width=""
+        data-layout=""
+        data-action=""
+        data-size=""
+        data-share="true"
+      ></div>
+
+      <!-- Nhúng comment  -->
+      <div
+        class="fb-comments"
+        data-href="https://thanhtrung7111.github.io/sofaproject"
+        data-width=""
+        data-numposts="5"
+      ></div>
+
+      <!-- Nhúng youtube  -->
+      <h2 style="margin-bottom: 20px;">Youtube</h2>
+      <div>
+        <iframe
+          width="887"
+          height="380"
+          src="https://www.youtube.com/embed/9SJfKiOCyWU?list=RD9SJfKiOCyWU"
+          title="ONLY LONELY ME - LY SÚP FT. VŨ PHỤNG TIÊN"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Nhúng bản đồ  -->
+      <h2 style="margin-bottom: 20px;">Bản đồ</h2>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1sNTruXRVCqogCHDzrdkOuKA-blZZ2JQ&ehbc=2E312F"
+          width="640"
+          height="480"
+        ></iframe>
+      </div>
+
+      <h2 style="margin-bottom: 20px;">Bài viết</h2>
+    </div>
+    <!-- Messenger Plugin chat Code -->
     <div id="fb-root"></div>
+
+   <!-- Messenger Plugin chat Code -->
+   <div id="fb-root"></div>
+
+   <!-- Your Plugin chat code -->
+   <div id="fb-customer-chat" class="fb-customerchat">
+   </div>
+
+   <script>
+     var chatbox = document.getElementById('fb-customer-chat');
+     chatbox.setAttribute("page_id", "115408399833388");
+     chatbox.setAttribute("attribution", "biz_inbox");
+   </script>
+
+   <!-- Your SDK code -->
+   <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         xfbml            : true,
+         version          : 'v16.0'
+       });
+     };
+
+     (function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+   </script>
     <script
       async
       defer
