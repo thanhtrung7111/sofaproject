@@ -869,7 +869,7 @@
 
                   </div>
                 </div>
-              
+
                 <!-------------- PORTFOLIO ITEM  -->
                 <div class="portfolio__item relative pointer">
                   <img class="height-100% img-center img-cover" src="assets/img/portfolio/portfolio-4-270x250.jpg"
@@ -988,8 +988,7 @@
 
               <!-------------- CARD IMAGE  -->
               <div class="card__img hidden height-350 m-bottom-50 radius-50">
-                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/funiture3.jpg"
-                  alt="" />
+                <img class="img-cover img-center trans-transform-20" src="assets/img/blog/funiture3.jpg" alt="" />
               </div>
 
               <div class="flex jus-between m-bottom-75">
@@ -1427,7 +1426,36 @@
     class="scroll__up fixed -bottom-100% right-100 height-50 width-50 radius-50% flex items-center jus-center bg-white boxshadow-10 text-first pointer">
     <i class="ri-arrow-up-line size-125"></i>
   </a>
+  <!-- Messenger Plugin chat Code -->
+  <div id="fb-root"></div>
 
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "115408399833388");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v16.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <script src="./assets/js/scrollreveal.js"></script>
   <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
