@@ -1,1080 +1,1465 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.png"
+      type="image/x-icon"
+    />
 
-  <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>SOFA</title>
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>SOFA</title>
-</head>
-
-<body>
-  <!-- modal -->
-  <div class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30" id="modal">
-    <div class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50">
-      <div class="modal__close absolute top-50 right-50 pointer size-150" id="modal-close">
-        <i class="ri-close-fill"></i>
-      </div>
-
-      <div class="modal__header relative border-bottom-third-1 m-block-150">
-        <div class="modal__header-active absolute bg-first trans-transform-30"></div>
-        <div class="modal__header-container grid grid-cols-2">
-          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
-            data-modal-header="login">
-            Login
-          </span>
-          <span class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
-            data-modal-header="register">
-            Register
-          </span>
-        </div>
-      </div>
-      <div class="modal__content">
-        <div class="modal__form none modal__form-active" data-modal-content="login">
-          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
-            <input type="text" placeholder="Username"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <input type="password" placeholder="Password"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <a href="#"
-              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">LOGIN</a>
-            <p class="text-600 text-first text-center m-block-75">
-              Or login with:
-            </p>
-            <ul class="flex column-gap-100 jus-center">
-              <li>
-                <a href="#" class="block height-25 width-25">
-                  <img src="./assets/img/social/facebook-logo-2019.png" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block height-25 width-25">
-                  <img src="./assets/img/social/google-plus.png" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block height-25 width-25">
-                  <img src="./assets/img/social/linkedin.png" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block height-25 width-25">
-                  <img src="./assets/img/social/twitter.png" alt="" />
-                </a>
-              </li>
-              <li></li>
-            </ul>
-            <p class="text-center size-75 m-top-125">
-              Do not have an account?<a href="#" class="text-first">
-                Register
-              </a>
-            </p>
-          </form>
-        </div>
-        <div class="modal__form none" data-modal-content="register">
-          <form action="" class="form__control flex direction-column row-gap-75 p-inline-125">
-            <input type="text" placeholder="Username"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <input type="password" placeholder="Password"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <input type="password" placeholder="Password Again"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <input type="text" placeholder="Email"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <input type="text" placeholder="Phone"
-              class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%" />
-            <a href="#"
-              class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30">register</a>
-            <p class="text-center size-75 m-top-125">
-              Do you have an account?<a href="#" class="text-first">
-                Login
-              </a>
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- header  -->
-  <header class="header bg-first" id="header">
-    <div class="header__container container flex jus-between items-center">
-      <ul class="flex column-gap-100">
-        <li class="flex items-center column-gap-25">
-          <i class="ri-map-pin-2-line text-white size-75"></i>
-          <span class="text-white text-smaller">35 Tran Dai Nghia, Di An City</span>
-        </li>
-        <li class="flex items-center column-gap-25">
-          <i class="ri-phone-line text-white size-75"></i>
-          <span class="text-white text-smaller">(+84) 937 022 915</span>
-        </li>
-      </ul>
-      <ul class="flex column-gap-50 items-center md:none">
-        <li
-          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
-          <a href="#">
-            <i class="ri-facebook-fill size-75 text-white"></i>
-          </a>
-        </li>
-        <li
-          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
-          <a href="#">
-            <i class="ri-twitter-fill size-75 text-white"></i>
-          </a>
-        </li>
-        <li
-          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
-          <a href="#">
-            <i class="ri-instagram-fill size-75 text-white"></i>
-          </a>
-        </li>
-        <li
-          class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1">
-          <a href="#">
-            <i class="ri-linkedin-fill size-75 text-white"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
-
-  <!----------------- NAV  -->
-  <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
-    <div class="nav__container container flex jus-between items-center">
-      <!---------- HEADER LOGO  -->
-      <a href="./index.html" class="nav__logo">
-        <img src="assets/img/logo.png" class="width-125" alt="Logo" />
-      </a>
-
-      <!----------- NAV MENU  -->
+  <body>
+    <!-- modal -->
+    <div
+      class="modal fixed z-100 flex p-block-100 jus-center visibility-hidden opacity-0 trans-opacity-30"
+      id="modal"
+    >
       <div
-        class="nav__menu lg:fixed lg:-left-100% lg:top-0% lg:width-350 lg:bg-white lg:boxshadow-3 lg:p-top-400 lg:z-40 lg:trans-right-30"
-        id="nav-menu">
-        <ul class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center">
-          <!------------ LINK  -->
-          <li class="nav__item pointe">
-            <a href="index.html"
-              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-              Home
-            </a>
-            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
-            </div>
-          </li>
+        class="modal__container relative width-500 md:width-450 p-block-200 p-inline-150 bg-white radius-50"
+      >
+        <div
+          class="modal__close absolute top-50 right-50 pointer size-150"
+          id="modal-close"
+        >
+          <i class="ri-close-fill"></i>
+        </div>
 
-          <!-- DROPDOWN LINK  -->
-          <li class="nav__item pointer dropdown relative">
-            <p href="#"
-              class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-              pages
-              <i class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"></i>
-            </p>
-            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
-            </div>
-
-            <!---------------- DROP DOWN ITEM -->
-            <div
-              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0">
-              <ul class="grid row-gap-100 lg:row-gap-0">
-                <li class="nav__item">
-                  <a href="./pages/aboutus.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    about us
+        <div class="modal__header relative border-bottom-third-1 m-block-150">
+          <div
+            class="modal__header-active absolute bg-first trans-transform-30"
+          ></div>
+          <div class="modal__header-container grid grid-cols-2">
+            <span
+              class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+              data-modal-header="login"
+            >
+              Login
+            </span>
+            <span
+              class="modal__menu text-second text-600 text-upper text-center p-bottom-75 pointer"
+              data-modal-header="register"
+            >
+              Register
+            </span>
+          </div>
+        </div>
+        <div class="modal__content">
+          <div
+            class="modal__form none modal__form-active"
+            data-modal-content="login"
+          >
+            <form
+              action=""
+              class="form__control flex direction-column row-gap-75 p-inline-125"
+            >
+              <input
+                type="text"
+                placeholder="Username"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <a
+                href="#"
+                class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30"
+                >LOGIN</a
+              >
+              <p class="text-600 text-first text-center m-block-75">
+                Or login with:
+              </p>
+              <ul class="flex column-gap-100 jus-center">
+                <li>
+                  <a href="#" class="block height-25 width-25">
+                    <img
+                      src="./assets/img/social/facebook-logo-2019.png"
+                      alt=""
+                    />
                   </a>
                 </li>
-                <li class="nav__item">
-                  <a href="./pages/offer.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    what we offer
+                <li>
+                  <a href="#" class="block height-25 width-25">
+                    <img src="./assets/img/social/google-plus.png" alt="" />
                   </a>
                 </li>
-                <li class="nav__item">
-                  <a href="./pages/ourteam.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    our team
+                <li>
+                  <a href="#" class="block height-25 width-25">
+                    <img src="./assets/img/social/linkedin.png" alt="" />
                   </a>
                 </li>
-                <li class="nav__item">
-                  <a href="./pages/testimonial.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    testmonials
+                <li>
+                  <a href="#" class="block height-25 width-25">
+                    <img src="./assets/img/social/twitter.png" alt="" />
                   </a>
                 </li>
+                <li></li>
               </ul>
-            </div>
+              <p class="text-center size-75 m-top-125">
+                Do not have an account?<a href="#" class="text-first">
+                  Register
+                </a>
+              </p>
+            </form>
+          </div>
+          <div class="modal__form none" data-modal-content="register">
+            <form
+              action=""
+              class="form__control flex direction-column row-gap-75 p-inline-125"
+            >
+              <input
+                type="text"
+                placeholder="Username"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <input
+                type="password"
+                placeholder="Password Again"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <input
+                type="text"
+                placeholder="Phone"
+                class="modal__input p-inline-75 p-block-75 outline-none border-first-1 width-100%"
+              />
+              <a
+                href="#"
+                class="text-upper text-smaller text-center text-white bg-second p-block-100 p-inline-175 hover:bg-first trans-all-30"
+                >register</a
+              >
+              <p class="text-center size-75 m-top-125">
+                Do you have an account?<a href="#" class="text-first">
+                  Login
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- header  -->
+    <header class="header bg-first" id="header">
+      <div class="header__container container flex jus-between items-center">
+        <ul class="flex column-gap-100">
+          <li class="flex items-center column-gap-25">
+            <i class="ri-map-pin-2-line text-white size-75"></i>
+            <span class="text-white text-smaller"
+              >35 Tran Dai Nghia, Di An City</span
+            >
           </li>
-
-          <!------------ LINK  -->
-          <li class="nav__item pointer active">
-            <a href="./blog.html"
-              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-              blog
-            </a>
-            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
-            </div>
-          </li>
-
-          <!------------ LINK  -->
-          <li class="nav__item pointer">
-            <a href="./gallery.html"
-              class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-              gallery
-            </a>
-            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
-            </div>
-          </li>
-
-          <!-- DROPDOWN LINK  -->
-          <li class="nav__item pointer dropdown relative" id="dropdown">
-            <p href="#"
-              class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-              shop
-              <i class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"></i>
-            </p>
-            <div class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none">
-            </div>
-
-            <!---------------- DROP DOWN ITEM -->
-            <div
-              class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
-              id="dropdown-item">
-              <ul class="grid row-gap-100 lg:row-gap-0">
-                <li class="nav__item">
-                  <a href="./shop/products.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    Product
-                  </a>
-                </li>
-                <li class="nav__item">
-                  <a href="./shop/sighleproduct.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    single product
-                  </a>
-                </li>
-                <li class="nav__item">
-                  <a href="./shop/shopcart.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    cart page
-                  </a>
-                </li>
-                <li class="nav__item">
-                  <a href="./shop/checkout.html"
-                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                    checkout
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <li class="flex items-center column-gap-25">
+            <i class="ri-phone-line text-white size-75"></i>
+            <span class="text-white text-smaller">(+84) 937 022 915</span>
           </li>
         </ul>
-        <div class="nav__close none lg:block absolute right-100 top-100 pointer" id="nav-close">
-          <i class="ri-close-line size-125 text-black"></i>
-        </div>
+        <ul class="flex column-gap-50 items-center md:none">
+          <li
+            class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1"
+          >
+            <a href="#">
+              <i class="ri-facebook-fill size-75 text-white"></i>
+            </a>
+          </li>
+          <li
+            class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1"
+          >
+            <a href="#">
+              <i class="ri-twitter-fill size-75 text-white"></i>
+            </a>
+          </li>
+          <li
+            class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1"
+          >
+            <a href="#">
+              <i class="ri-instagram-fill size-75 text-white"></i>
+            </a>
+          </li>
+          <li
+            class="flex jus-center items-center column-gap-25 bg-white height-25 width-25 radius-50% bg-transparent border-white-1"
+          >
+            <a href="#">
+              <i class="ri-linkedin-fill size-75 text-white"></i>
+            </a>
+          </li>
+        </ul>
       </div>
+    </header>
 
-      <!----------- NAV ACTION -->
-      <ul class="nav__action flex items-center column-gap-150">
-        <li class="relative">
-          <i class="ri-search-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
-        </li>
+    <!----------------- NAV  -->
+    <nav class="nav sticky top-0 left-0 bg-white width-100% boxshadow-3 z-90">
+      <div class="nav__container container flex jus-between items-center">
+        <!---------- HEADER LOGO  -->
+        <a href="./index.html" class="nav__logo">
+          <img src="assets/img/logo.png" class="width-125" alt="Logo" />
+        </a>
 
-        <!---------- CART NAV  -->
-        <li class="relative nav__cart" id="nav-cart-toggle">
-          <i class="ri-shopping-cart-2-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
-          <span
-            class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75">5</span>
-
-          <!---------- CART NAV CONTAINER  -->
-          <div id="nav-cart-container"
-            class="nav__cart-container opacity-0 visibility-hidden md:visibility-visible trans-opacity-30 md:block absolute top-110% -right-200% bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40">
-            <div id="nav-cart-close" class="nav__cart-close none md:block absolute top-100 right-100 pointer">
-              <i class="ri-close-line size-125"></i>
-            </div>
-            <h3 class="text-h3 text-upper text-second text-500 m-block-50">
-              total products: <span>5</span>
-            </h3>
-            <p class="text-small text-300">Total price: $67.00</p>
-            <hr class="m-block-75" />
-
-            <!------------- NAV CART LIST  -->
-            <ul class="grid row-gap-75 m-bottom-100">
-              <!------------- NAV CART ITEM  -->
-              <li class="flex items-center column-gap-100">
-                <div class="width-100 height-100 p-50 bg-third hidden">
-                  <img src="assets/img/product/product-1-129x172.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="text-normal text-upper text-300 m-bottom-100">
-                    GARDEN TABLE
-                  </h3>
-
-                  <div class="flex column-gap-75 items-center m-bottom-100">
-                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
-                      <i class="ri-subtract-line size-75"></i>
-                    </button>
-                    <span class="text-small"> 2 </span>
-                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
-                      <i class="ri-add-line size-75"></i>
-                    </button>
-                    <span class="text-small text-300"> $25.00 </span>
-                  </div>
-                </div>
-              </li>
-
-              <!------------- NAV CART ITEM  -->
-              <li class="flex items-center column-gap-100">
-                <div class="width-100 height-100 p-50 bg-third hidden">
-                  <img src="assets/img/product/product-2-160x155.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="text-normal text-upper text-300 m-bottom-100">
-                    CLUB CHAIR
-                  </h3>
-
-                  <div class="flex column-gap-75 items-center m-bottom-100">
-                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
-                      <i class="ri-subtract-line size-75"></i>
-                    </button>
-                    <span class="text-small"> 2 </span>
-                    <button class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer">
-                      <i class="ri-add-line size-75"></i>
-                    </button>
-                    <span class="text-small text-300"> $13.00 </span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <div class="nav__card-action flex column-gap-100">
-              <a href="./shop/shopcart.html"
-                class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
-                go to card
+        <!----------- NAV MENU  -->
+        <div
+          class="nav__menu lg:fixed lg:-left-100% lg:top-0% lg:width-350 lg:bg-white lg:boxshadow-3 lg:p-top-400 lg:z-40 lg:trans-right-30"
+          id="nav-menu"
+        >
+          <ul
+            class="nav__list relative flex column-gap-100 items-center lg:block lg:jus-center"
+          >
+            <!------------ LINK  -->
+            <li class="nav__item pointe">
+              <a
+                href="index.html"
+                class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+              >
+                Home
               </a>
-              <a href="./shop/checkout.html"
-                class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20">
-                check out
-              </a>
-            </div>
-          </div>
-        </li>
-        <li class="relative">
-          <i class="ri-message-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
-          <span
-            class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75">7</span>
-        </li>
+              <div
+                class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none"
+              ></div>
+            </li>
 
-        <!---------- LOGIN NAV  -->
-        <li class="relative nav__login">
-          <i class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"></i>
+            <!-- DROPDOWN LINK  -->
+            <li class="nav__item pointer dropdown relative">
+              <p
+                href="#"
+                class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+              >
+                pages
+                <i
+                  class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"
+                ></i>
+              </p>
+              <div
+                class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none"
+              ></div>
+
+              <!---------------- DROP DOWN ITEM -->
+              <div
+                class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+              >
+                <ul class="grid row-gap-100 lg:row-gap-0">
+                  <li class="nav__item">
+                    <a
+                      href="./pages/aboutus.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      about us
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./pages/offer.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      what we offer
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./pages/ourteam.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      our team
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./pages/testimonial.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      testmonials
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!------------ LINK  -->
+            <li class="nav__item pointer active">
+              <a
+                href="./blog.html"
+                class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+              >
+                blog
+              </a>
+              <div
+                class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none"
+              ></div>
+            </li>
+
+            <!------------ LINK  -->
+            <li class="nav__item pointer">
+              <a
+                href="./gallery.html"
+                class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+              >
+                gallery
+              </a>
+              <div
+                class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none"
+              ></div>
+            </li>
+
+            <!-- DROPDOWN LINK  -->
+            <li class="nav__item pointer dropdown relative" id="dropdown">
+              <p
+                href="#"
+                class="nav__link relative block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+              >
+                shop
+                <i
+                  class="ri-arrow-up-s-line absolute size-75 -right-25 top-10% lg:right-10% lg:top-40% trans-all-30"
+                ></i>
+              </p>
+              <div
+                class="nav__item-line width-50% border-bottom-first-2 opacity-0 trans-all-30 m-inline-auto lg:none"
+              ></div>
+
+              <!---------------- DROP DOWN ITEM -->
+              <div
+                class="dropdown-item bg-white visibility-hidden opacity-0 absolute boxshadow-5 top-120% -left-100 width-200 p-inline-75 p-block-150 trans-all-30 lg:relative lg:block lg:width-100% lg:p-inline-0 lg:p-inline-0 lg:p-block-0 lg:m-bottom-0 lg:left-0% lg:top-0% lg:hidden lg:height-0"
+                id="dropdown-item"
+              >
+                <ul class="grid row-gap-100 lg:row-gap-0">
+                  <li class="nav__item">
+                    <a
+                      href="./shop/products.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      Product
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./shop/sighleproduct.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      single product
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./shop/shopcart.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      cart page
+                    </a>
+                  </li>
+                  <li class="nav__item">
+                    <a
+                      href="./shop/checkout.html"
+                      class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                    >
+                      checkout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
           <div
-            class="nav__login-container visibility-hidden opacity-0 absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 trans-opacity-30">
-            <ul class="flex direction-column row-gap-50">
-              <li class="" id="login">
-                <a href="#"
-                  class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                  login
-                </a>
-              </li>
-              <li class="">
-                <a href="#"
-                  class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center">
-                  register
-                </a>
-              </li>
-            </ul>
+            class="nav__close none lg:block absolute right-100 top-100 pointer"
+            id="nav-close"
+          >
+            <i class="ri-close-line size-125 text-black"></i>
           </div>
-        </li>
-        <li class="nav__toggle" id="nav-toggle">
-          <i class="ri-menu-line none lg:block size-125 text-black hover:text-first trans-color-30 pointer"></i>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        </div>
 
-  <!-------------- MAIN  -->
-  <main class="main">
-    <!-- TITLE PAGE  -->
-    <section class="section-page">
-      <div style="
+        <!----------- NAV ACTION -->
+        <ul class="nav__action flex items-center column-gap-150">
+          <li class="relative">
+            <i
+              class="ri-search-line size-125 text-black hover:text-first trans-color-30 pointer"
+            ></i>
+          </li>
+
+          <!---------- CART NAV  -->
+          <li class="relative nav__cart" id="nav-cart-toggle">
+            <i
+              class="ri-shopping-cart-2-line size-125 text-black hover:text-first trans-color-30 pointer"
+            ></i>
+            <span
+              class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75"
+              >5</span
+            >
+
+            <!---------- CART NAV CONTAINER  -->
+            <div
+              id="nav-cart-container"
+              class="nav__cart-container opacity-0 visibility-hidden md:visibility-visible trans-opacity-30 md:block absolute top-110% -right-200% bg-white p-block-150 p-inline-100 boxshadow-3 radius-25 width-400 md:trans-right-40"
+            >
+              <div
+                id="nav-cart-close"
+                class="nav__cart-close none md:block absolute top-100 right-100 pointer"
+              >
+                <i class="ri-close-line size-125"></i>
+              </div>
+              <h3 class="text-h3 text-upper text-second text-500 m-block-50">
+                total products: <span>5</span>
+              </h3>
+              <p class="text-small text-300">Total price: $67.00</p>
+              <hr class="m-block-75" />
+
+              <!------------- NAV CART LIST  -->
+              <ul class="grid row-gap-75 m-bottom-100">
+                <!------------- NAV CART ITEM  -->
+                <li class="flex items-center column-gap-100">
+                  <div class="width-100 height-100 p-50 bg-third hidden">
+                    <img
+                      src="assets/img/product/product-1-129x172.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <h3 class="text-normal text-upper text-300 m-bottom-100">
+                      GARDEN TABLE
+                    </h3>
+
+                    <div class="flex column-gap-75 items-center m-bottom-100">
+                      <button
+                        class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer"
+                      >
+                        <i class="ri-subtract-line size-75"></i>
+                      </button>
+                      <span class="text-small"> 2 </span>
+                      <button
+                        class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer"
+                      >
+                        <i class="ri-add-line size-75"></i>
+                      </button>
+                      <span class="text-small text-300"> $25.00 </span>
+                    </div>
+                  </div>
+                </li>
+
+                <!------------- NAV CART ITEM  -->
+                <li class="flex items-center column-gap-100">
+                  <div class="width-100 height-100 p-50 bg-third hidden">
+                    <img
+                      src="assets/img/product/product-2-160x155.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <h3 class="text-normal text-upper text-300 m-bottom-100">
+                      CLUB CHAIR
+                    </h3>
+
+                    <div class="flex column-gap-75 items-center m-bottom-100">
+                      <button
+                        class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer"
+                      >
+                        <i class="ri-subtract-line size-75"></i>
+                      </button>
+                      <span class="text-small"> 2 </span>
+                      <button
+                        class="outline-none border-black-1 radius-50 p-50 flex items-center bg-white pointer"
+                      >
+                        <i class="ri-add-line size-75"></i>
+                      </button>
+                      <span class="text-small text-300"> $13.00 </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="nav__card-action flex column-gap-100">
+                <a
+                  href="./shop/shopcart.html"
+                  class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20"
+                >
+                  go to card
+                </a>
+                <a
+                  href="./shop/checkout.html"
+                  class="p-inline-125 p-block-75 text-upper border-first-1 text-smaller text-first bg-white hover:bg-first hover:text-white trans-all-20"
+                >
+                  check out
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="relative">
+            <i
+              class="ri-message-line size-125 text-black hover:text-first trans-color-30 pointer"
+            ></i>
+            <span
+              class="size-50 text-white bg-first width-25 height-25 radius-50% border-white-2 absolute flex items-center jus-center -top-75 -right-75"
+              >7</span
+            >
+          </li>
+
+          <!---------- LOGIN NAV  -->
+          <li class="relative nav__login">
+            <i
+              class="ri-user-line size-125 text-black hover:text-first trans-color-30 pointer"
+            ></i>
+            <div
+              class="nav__login-container visibility-hidden opacity-0 absolute p-block-75 p-inline-125 top-110% -right-20% bg-white boxshadow-3 radius-25 trans-opacity-30"
+            >
+              <ul class="flex direction-column row-gap-50">
+                <li class="" id="login">
+                  <a
+                    href="#"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                  >
+                    login
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    href="#"
+                    class="nav__link block text-smaller text-upper text-black letter-2 trans-all-30 m-bottom-25 p-inline-75 lg:p-block-100 lg:m-bottom-0 lg:text-center"
+                  >
+                    register
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__toggle" id="nav-toggle">
+            <i
+              class="ri-menu-line none lg:block size-125 text-black hover:text-first trans-color-30 pointer"
+            ></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-------------- MAIN  -->
+    <main class="main">
+      <!-- TITLE PAGE  -->
+      <section class="section-page">
+        <div
+          style="
             background-image: linear-gradient(
                 rgba(0, 0, 0, 0.2),
                 rgba(0, 0, 0, 0.2)
               ),
               url('./assets/img/pages/bg-blog-2.jpg');
-          " class="section-background text-center bg-center bg-cover bg-fixed">
-        <div class="container">
-          <h2 class="text-h2 text-white text-upper text-500 m-bottom-125 letter-1">
-            blog
-          </h2>
-          <p
-            class="text-small text-white text-300 text-white text-center width-500 sm:width-450 m-inline-auto letter-1">
-            Quisque ullamcorper nulla magna, vitae tincidunt ipsum interdum
-            nec sit amet fermentum pellentesque, pulvinar non tellus.
-          </p>
+          "
+          class="section-background text-center bg-center bg-cover bg-fixed"
+        >
+          <div class="container">
+            <h2
+              class="text-h2 text-white text-upper text-500 m-bottom-125 letter-1"
+            >
+              blog
+            </h2>
+            <p
+              class="text-small text-white text-300 text-white text-center width-500 sm:width-450 m-inline-auto letter-1"
+            >
+              Quisque ullamcorper nulla magna, vitae tincidunt ipsum interdum
+              nec sit amet fermentum pellentesque, pulvinar non tellus.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="flex jus-center items-center column-gap-50 p-block-100 bg-third">
-        <span class="text-smaller text-second text-upper text-600">Home</span>
-        <i class="ri-arrow-right-line size-75 text-second"></i>
-        <span class="text-smaller text-first text-upper text-600">blog</span>
-      </div>
-    </section>
+        <div
+          class="flex jus-center items-center column-gap-50 p-block-100 bg-third"
+        >
+          <span class="text-smaller text-second text-upper text-600">Home</span>
+          <i class="ri-arrow-right-line size-75 text-second"></i>
+          <span class="text-smaller text-first text-upper text-600">blog</span>
+        </div>
+      </section>
 
-    <!--------------- CONTENT  -------------->
-    <section class="p-block-400">
-      <div class="container">
-        <div class="grid grid-cols-2:1 lg:grid-cols-1:0 column-gap-300 lg:column-gap-0">
-          <!----------- LEFT CONTENT  -->
-          <div class="reveal-left">
-            <!---------- CARD BLOG  -->
-            <div class="grid row-gap-200 grid-rows-0">
+      <!--------------- CONTENT  -------------->
+      <section class="p-block-400">
+        <div class="container">
+          <div
+            class="grid grid-cols-2:1 lg:grid-cols-1:0 column-gap-300 lg:column-gap-0"
+          >
+            <!----------- LEFT CONTENT  -->
+            <div class="reveal-left">
+              <!---------- CARD BLOG  -->
+              <div class="grid row-gap-200 grid-rows-0">
+                <!---------------- CARD  -->
+                <a href="./singleblog.html" class="card pointer p-bottom-100">
+                  <!------------- DATE  -->
+                  <div class="m-bottom-150">
+                    <span class="text-upper text-smaller relative text-second">
+                      <div
+                        class="absolute bottom-0 left-0 bg-first width-90% radius-50"
+                        style="height: 5px; z-index: -1"
+                      ></div>
+                      news
+                    </span>
+                    <span
+                      class="text-title text-small m-left-100 p-left-100 border-left-title-1"
+                      >August 9, 2021</span
+                    >
+                  </div>
 
-              <!---------------- CARD  -->
-              <a href="./singleblog.html" class="card pointer p-bottom-100">
-                <!------------- DATE  -->
-                <div class="m-bottom-150">
-                  <span class="text-upper text-smaller relative text-second">
-                    <div class="absolute bottom-0 left-0 bg-first width-90% radius-50" style="height: 5px; z-index: -1">
+                  <!-------------- CARD TITLE  -->
+                  <h2 class="text-h2 text-500 m-bottom-150 text-second">
+                    Top 20 Interior Home Decor Trends of 2021
+                  </h2>
+                  <!-------------- CARD IMAGE  -->
+                  <div
+                    class="card__img relative hidden height-350 m-bottom-50 radius-50"
+                  >
+                    <img
+                      class="img-cover img-center trans-transform-20"
+                      src="assets/img/blog/furniture1.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div class="flex jus-between m-bottom-75">
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                        October 12, 2036
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                        Trung
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                        Comments
+                      </span>
                     </div>
-                    news
-                  </span>
-                  <span class="text-title text-small m-left-100 p-left-100 border-left-title-1">August 9, 2021</span>
-                </div>
 
-                <!-------------- CARD TITLE  -->
-                <h2 class="text-h2 text-500 m-bottom-150 text-second">
-                  Top 20 Interior Home Decor Trends of 2021
-                </h2>
-                <!-------------- CARD IMAGE  -->
-                <div class="card__img relative hidden height-350 m-bottom-50 radius-50">
-                  <img class="img-cover img-center trans-transform-20" src="assets/img/blog/furniture1.jpg"
-                    alt="" />
-                </div>
-
-                <div class="flex jus-between m-bottom-75">
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-calendar-2-line size-100 m-right-25"></i>
-                      October 12, 2036
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
-                      Trung
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-message-2-line size-100 m-right-25"></i> 32
-                      Comments
-                    </span>
-                  </div>
-
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-heart-line size-100 m-right-25"></i>
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-thumb-up-line size-100 m-right-25"></i>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="card__description m-bottom-75 text-second">
-                  <p class="text-small line-170">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minus impedit praesentium nihil doloremque quia ad eos
-                    consequatur reprehenderit sequi quaerat ipsum consequuntur
-                    quam repudiandae, dolorem deserunt perferendis harum
-                    sapiente saepe.
-                  </p>
-                </div>
-                <span class="text-smaller text-first flex items-center column-gap-25 text-upper">See more
-                  <i class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i>
-                </span>
-              </a>
-
-              <!---------------- CARD  -->
-              <a href="./singleblog.html" class="card pointer p-bottom-100">
-                <!------------- DATE  -->
-                <div class="m-bottom-150">
-                  <span class="text-upper text-smaller relative text-second">
-                    <div class="absolute bottom-0 left-0 bg-first width-90% radius-50" style="height: 5px; z-index: -1">
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-heart-line size-100 m-right-25"></i>
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-thumb-up-line size-100 m-right-25"></i>
+                      </span>
                     </div>
-                    news
+                  </div>
+
+                  <div class="card__description m-bottom-75 text-second">
+                    <p class="text-small line-170">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Minus impedit praesentium nihil doloremque quia ad eos
+                      consequatur reprehenderit sequi quaerat ipsum consequuntur
+                      quam repudiandae, dolorem deserunt perferendis harum
+                      sapiente saepe.
+                    </p>
+                  </div>
+                  <span
+                    class="text-smaller text-first flex items-center column-gap-25 text-upper"
+                    >See more
+                    <i
+                      class="card__icon ri-arrow-right-line size-50 trans-transform-20"
+                    ></i>
                   </span>
-                  <span class="text-title text-small m-left-100 p-left-100 border-left-title-1">August 9, 2021</span>
-                </div>
+                </a>
 
-                <!-------------- CARD TITLE  -->
-                <h2 class="text-h2 text-500 m-bottom-150 text-second">
-                  How to Choose Furniture for Your Home
-                </h2>
-                <!-------------- CARD IMAGE  -->
-                <div class="card__img relative hidden height-350 m-bottom-50 radius-50">
-                  <img class="img-cover img-center trans-transform-20" src="assets/img/blog/furniture2-scaled.jpg"
-                    alt="" />
-                </div>
-
-                <div class="flex jus-between m-bottom-75">
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-calendar-2-line size-100 m-right-25"></i>
-                      October 12, 2036
+                <!---------------- CARD  -->
+                <a href="./singleblog.html" class="card pointer p-bottom-100">
+                  <!------------- DATE  -->
+                  <div class="m-bottom-150">
+                    <span class="text-upper text-smaller relative text-second">
+                      <div
+                        class="absolute bottom-0 left-0 bg-first width-90% radius-50"
+                        style="height: 5px; z-index: -1"
+                      ></div>
+                      news
                     </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
-                      Trung
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-message-2-line size-100 m-right-25"></i> 32
-                      Comments
-                    </span>
+                    <span
+                      class="text-title text-small m-left-100 p-left-100 border-left-title-1"
+                      >August 9, 2021</span
+                    >
                   </div>
 
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-heart-line size-100 m-right-25"></i>
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-thumb-up-line size-100 m-right-25"></i>
-                    </span>
+                  <!-------------- CARD TITLE  -->
+                  <h2 class="text-h2 text-500 m-bottom-150 text-second">
+                    How to Choose Furniture for Your Home
+                  </h2>
+                  <!-------------- CARD IMAGE  -->
+                  <div
+                    class="card__img relative hidden height-350 m-bottom-50 radius-50"
+                  >
+                    <img
+                      class="img-cover img-center trans-transform-20"
+                      src="assets/img/blog/furniture2-scaled.jpg"
+                      alt=""
+                    />
                   </div>
-                </div>
 
-                <div class="card__description m-bottom-75 text-second">
-                  <p class="text-small line-170">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minus impedit praesentium nihil doloremque quia ad eos
-                    consequatur reprehenderit sequi quaerat ipsum consequuntur
-                    quam repudiandae, dolorem deserunt perferendis harum
-                    sapiente saepe.
-                  </p>
-                </div>
-                <span class="text-smaller text-first flex items-center column-gap-25 text-upper">See more
-                  <i class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i>
-                </span>
-              </a>
-
-              <!---------------- CARD  -->
-              <a href="./singleblog.html" class="card pointer p-bottom-100">
-                <!------------- DATE  -->
-                <div class="m-bottom-150">
-                  <span class="text-upper text-smaller relative text-second">
-                    <div class="absolute bottom-0 left-0 bg-first width-90% radius-50" style="height: 5px; z-index: -1">
+                  <div class="flex jus-between m-bottom-75">
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                        October 12, 2036
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                        Trung
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                        Comments
+                      </span>
                     </div>
-                    news
+
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-heart-line size-100 m-right-25"></i>
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-thumb-up-line size-100 m-right-25"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="card__description m-bottom-75 text-second">
+                    <p class="text-small line-170">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Minus impedit praesentium nihil doloremque quia ad eos
+                      consequatur reprehenderit sequi quaerat ipsum consequuntur
+                      quam repudiandae, dolorem deserunt perferendis harum
+                      sapiente saepe.
+                    </p>
+                  </div>
+                  <span
+                    class="text-smaller text-first flex items-center column-gap-25 text-upper"
+                    >See more
+                    <i
+                      class="card__icon ri-arrow-right-line size-50 trans-transform-20"
+                    ></i>
                   </span>
-                  <span class="text-title text-small m-left-100 p-left-100 border-left-title-1">August 9, 2021</span>
-                </div>
+                </a>
 
-                <!-------------- CARD TITLE  -->
-                <h2 class="text-h2 text-500 m-bottom-150 text-second">
-                  Ways to Decorate Your Home with the Color Red
-                </h2>
-                <!-------------- CARD IMAGE  -->
-                <div class="card__img relative hidden height-350 m-bottom-50 radius-50">
-                  <img class="img-cover img-center trans-transform-20" src="assets/img/blog/funiture3.jpg"
-                    alt="" />
-                </div>
-
-                <div class="flex jus-between m-bottom-75">
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-calendar-2-line size-100 m-right-25"></i>
-                      October 12, 2036
+                <!---------------- CARD  -->
+                <a href="./singleblog.html" class="card pointer p-bottom-100">
+                  <!------------- DATE  -->
+                  <div class="m-bottom-150">
+                    <span class="text-upper text-smaller relative text-second">
+                      <div
+                        class="absolute bottom-0 left-0 bg-first width-90% radius-50"
+                        style="height: 5px; z-index: -1"
+                      ></div>
+                      news
                     </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
-                      Trung
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-message-2-line size-100 m-right-25"></i> 32
-                      Comments
-                    </span>
+                    <span
+                      class="text-title text-small m-left-100 p-left-100 border-left-title-1"
+                      >August 9, 2021</span
+                    >
                   </div>
 
-                  <!------------- CARD ACTION  -->
-                  <div class="flex column-gap-100">
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-heart-line size-100 m-right-25"></i>
-                    </span>
-                    <span class="text-smaller text-300 text-second flex items-center">
-                      <i class="ri-thumb-up-line size-100 m-right-25"></i>
-                    </span>
+                  <!-------------- CARD TITLE  -->
+                  <h2 class="text-h2 text-500 m-bottom-150 text-second">
+                    Ways to Decorate Your Home with the Color Red
+                  </h2>
+                  <!-------------- CARD IMAGE  -->
+                  <div
+                    class="card__img relative hidden height-350 m-bottom-50 radius-50"
+                  >
+                    <img
+                      class="img-cover img-center trans-transform-20"
+                      src="assets/img/blog/funiture3.jpg"
+                      alt=""
+                    />
                   </div>
-                </div>
 
-                <div class="card__description m-bottom-75 text-second">
-                  <p class="text-small line-170">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minus impedit praesentium nihil doloremque quia ad eos
-                    consequatur reprehenderit sequi quaerat ipsum consequuntur
-                    quam repudiandae, dolorem deserunt perferendis harum
-                    sapiente saepe.
-                  </p>
-                </div>
-                <span class="text-smaller text-first flex items-center column-gap-25 text-upper">See more
-                  <i class="card__icon ri-arrow-right-line size-50 trans-transform-20"></i>
-                </span>
-              </a>
+                  <div class="flex jus-between m-bottom-75">
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                        October 12, 2036
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-user-2-line size-100 m-right-25"></i> Thanh
+                        Trung
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-message-2-line size-100 m-right-25"></i> 32
+                        Comments
+                      </span>
+                    </div>
 
+                    <!------------- CARD ACTION  -->
+                    <div class="flex column-gap-100">
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-heart-line size-100 m-right-25"></i>
+                      </span>
+                      <span
+                        class="text-smaller text-300 text-second flex items-center"
+                      >
+                        <i class="ri-thumb-up-line size-100 m-right-25"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="card__description m-bottom-75 text-second">
+                    <p class="text-small line-170">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Minus impedit praesentium nihil doloremque quia ad eos
+                      consequatur reprehenderit sequi quaerat ipsum consequuntur
+                      quam repudiandae, dolorem deserunt perferendis harum
+                      sapiente saepe.
+                    </p>
+                  </div>
+                  <span
+                    class="text-smaller text-first flex items-center column-gap-25 text-upper"
+                    >See more
+                    <i
+                      class="card__icon ri-arrow-right-line size-50 trans-transform-20"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+
+              <ul class="flex column-gap-75 m-top-100 items-center jus-center">
+                <li class="text-second hover:text-first trans-color-20 pointer">
+                  1
+                </li>
+                <li class="text-second hover:text-first trans-color-20 pointer">
+                  2
+                </li>
+                <li class="text-second hover:text-first trans-color-20 pointer">
+                  3
+                </li>
+                <li
+                  class="flex items-center text-second hover:text-first trans-color-20 pointer"
+                >
+                  <i class="ri-arrow-right-s-line size-100"></i>
+                </li>
+              </ul>
             </div>
 
-            <ul class="flex column-gap-75 m-top-100 items-center jus-center">
-              <li class="text-second hover:text-first trans-color-20 pointer">
-                1
+            <!------------- RIGHT CONTENT  -->
+            <div class="flex direction-column row-gap-300 lg:none reveal-right">
+              <!------------ AUTHOR  -->
+              <div
+                class="flex direction-column row-gap-100 items-center jus-center p-block-250 border-title-1"
+              >
+                <img
+                  src="./assets/img/person/team-15-370x334.jpg"
+                  class="width-125 height-125 img-center img-cover radius-50%"
+                  alt="Hinh anh avatar"
+                />
+                <h3 class="text-normal hover:text-first trans-color-30 pointer">
+                  REBECCA HARISON
+                </h3>
+                <p class="text-small width-200 text-center text-300">
+                  Europe's top designer, elite interior designer.
+                </p>
+              </div>
+
+              <!-------------- SEARCH BLOG  -->
+              <div
+                class="flex jus-between items-center p-block-125 p-inline-100 bg-third"
+              >
+                <input
+                  type="text"
+                  placeholder="Search Blog"
+                  class="bg-transparent outline-none border-initial-0 text-title placeholder:text-title"
+                />
+                <i class="ri-search-2-line size-100 text-second pointer"></i>
+              </div>
+
+              <!---------------- CATEGORIES  -->
+              <div>
+                <h3 class="text-small text-upper text-second text-500">
+                  categories
+                </h3>
+                <div class="line bg-third width-100% m-block-100"></div>
+                <ul class="flex direction-column row-gap-100">
+                  <li class="flex items-center jus-between text-smaller">
+                    <a
+                      href="#"
+                      class="text-second hover:text-first trans-color-20 letter-1"
+                      >All</a
+                    >
+                    <span>(18)</span>
+                  </li>
+                  <li class="flex items-center jus-between text-smaller">
+                    <a
+                      href="#"
+                      class="text-second hover:text-first trans-color-20 letter-1"
+                      >News</a
+                    >
+                    <span>(9)</span>
+                  </li>
+                  <li class="flex items-center jus-between text-smaller">
+                    <a
+                      href="#"
+                      class="text-second hover:text-first trans-color-20 letter-1"
+                      >Tips</a
+                    >
+                    <span>(5)</span>
+                  </li>
+                  <li class="flex items-center jus-between text-smaller">
+                    <a
+                      href="#"
+                      class="text-second hover:text-first trans-color-20 letter-1"
+                      >Furniture</a
+                    >
+                    <span>(8)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!--------------- LAST POSTED  -->
+              <div>
+                <h3 class="text-small text-upper text-second text-500">
+                  lasted post
+                </h3>
+                <div class="line bg-third width-100% m-block-100"></div>
+                <div class="grid row-gap-100 m-bottom-125">
+                  <!----------- CARD SMALL  -->
+                  <a
+                    href="./singleblog.html"
+                    class="card grid grid-cols-2 column-gap-50 pointer"
+                  >
+                    <div class="card__img hidden height-125 radius-25">
+                      <img
+                        src="./assets/img/blog/post-12-420x368.jpg"
+                        alt="Hinh anh blog"
+                        class="img-top img-cover trans-transform-20"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="text-normal text-second m-bottom-50 text-700">
+                        LED Lighting and Its Benefits
+                      </h3>
+                      <div class="grid row-gap-50">
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                          October 12, 2036
+                        </span>
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-user-2-line size-100 m-right-25"></i>
+                          Thanh Trung
+                        </span>
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-message-2-line size-100 m-right-25"></i>
+                          32 Comments
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+
+                  <!----------- CARD SMALL  -->
+                  <a
+                    href="./singleblog.html"
+                    class="card grid grid-cols-2 column-gap-50 pointer"
+                  >
+                    <div class="card__img hidden height-125 radius-25">
+                      <img
+                        src="./assets/img/blog/post-13-420x368.jpg"
+                        alt="Hinh anh blog"
+                        class="img-bottom img-cover trans-transform-20"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="text-normal text-second m-bottom-50 text-700">
+                        What to Look for When Shopping
+                      </h3>
+                      <div class="grid row-gap-50">
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-calendar-2-line size-100 m-right-25"></i>
+                          October 12, 2036
+                        </span>
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-user-2-line size-100 m-right-25"></i>
+                          Thanh Trung
+                        </span>
+                        <span
+                          class="text-smaller text-300 text-second flex items-center"
+                        >
+                          <i class="ri-message-2-line size-100 m-right-25"></i>
+                          32 Comments
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!--------------- POPULAR TAG  -->
+              <div>
+                <h3 class="text-small text-upper text-second text-500">
+                  popular tag
+                </h3>
+                <div class="line bg-third width-100% m-block-100"></div>
+                <div class="flex wrap column-gap-175 row-gap-100">
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    news
+                  </a>
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    furniture
+                  </a>
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    decor
+                  </a>
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    tips
+                  </a>
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    interior
+                  </a>
+                  <a
+                    href="#"
+                    class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20"
+                  >
+                    lighting
+                  </a>
+                </div>
+              </div>
+
+              <!------------- ARCHIVE  -->
+              <div>
+                <h3 class="text-small text-upper text-second text-500">
+                  ARCHIVE
+                </h3>
+                <div class="line bg-third width-100% m-block-100"></div>
+                <ul class="flex direction-column row-gap-75">
+                  <li class="flex items-center column-gap-100">
+                    <i class="ri-edit-circle-fill text-first"></i>
+                    <a
+                      href="#"
+                      class="text-small text-second hover:text-first trans-color-20"
+                    >
+                      March 2023
+                    </a>
+                  </li>
+                  <li class="flex items-center column-gap-100">
+                    <i class="ri-edit-circle-fill text-first"></i>
+                    <a
+                      href="#"
+                      class="text-small text-second hover:text-first trans-color-20"
+                    >
+                      February 2023
+                    </a>
+                  </li>
+                  <li class="flex items-center column-gap-100">
+                    <i class="ri-edit-circle-fill text-first"></i>
+                    <a
+                      href="#"
+                      class="text-small text-second hover:text-first trans-color-20"
+                    >
+                      January 2023
+                    </a>
+                  </li>
+                  <li class="flex items-center column-gap-100">
+                    <i class="ri-edit-circle-fill text-first"></i>
+                    <a
+                      href="#"
+                      class="text-small text-second hover:text-first trans-color-20"
+                    >
+                      December 2023
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------- SALE  -->
+      <section class="sale">
+        <div class="container p-block-150">
+          <h2
+            class="m-bottom-225 text-upper text-400 p-bottom-100 border-bottom-third-1 letter-1"
+          >
+            product sale
+          </h2>
+          <div class="swiper saleSwiper">
+            <div class="swiper-wrapper">
+              <!------------ PRODUCT ITEM  SALE-->
+              <a
+                href="./shop/sighleproduct.html"
+                class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80"
+              >
+                <img
+                  class="width-125 height-150 img-top img-contain m-bottom-100"
+                  src="./assets/img/product/product-1-129x172.png"
+                  alt=""
+                />
+                <h3
+                  class="text-normal text-upper text-300 m-bottom-75 text-second"
+                >
+                  GARDEN TABLE
+                </h3>
+                <div class="m-bottom-100">
+                  <span
+                    class="text-300 text-second text-line-through m-right-50"
+                    >$30.00
+                  </span>
+                  <span class="text-700 text-first">$23.00</span>
+                </div>
+                <div class="static flex jus-center column-gap-75">
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-search-line"></i>
+                  </div>
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-shopping-cart-line"></i>
+                  </div>
+                </div>
+                <span
+                  class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                  style="background-color: rgb(255, 128, 128)"
+                >
+                  sale
+                </span>
+              </a>
+
+              <!------------ PRODUCT ITEM  SALE-->
+              <a
+                href="./shop/sighleproduct.html"
+                class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80"
+              >
+                <img
+                  class="width-125 height-150 img-top img-contain m-bottom-100"
+                  src="./assets/img/product/product-2-160x155.png"
+                  alt=""
+                />
+                <h3
+                  class="text-normal text-upper text-300 m-bottom-75 text-second"
+                >
+                  CLUB CHAIR
+                </h3>
+                <div class="m-bottom-100">
+                  <span
+                    class="text-300 text-second text-line-through m-right-50"
+                    >$32.00
+                  </span>
+                  <span class="text-700 text-first">$24.00</span>
+                </div>
+                <div class="static flex jus-center column-gap-75">
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-search-line"></i>
+                  </div>
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-shopping-cart-line"></i>
+                  </div>
+                </div>
+                <span
+                  class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                  style="background-color: rgb(255, 128, 128)"
+                >
+                  sale
+                </span>
+              </a>
+
+              <!------------ PRODUCT ITEM  SALE-->
+              <a
+                href="./shop/sighleproduct.html"
+                class="product__item swiper-slide relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20"
+              >
+                <img
+                  class="width-125 height-150 img-top img-contain m-bottom-100"
+                  src="./assets/img/product/product-3-132x200.png"
+                  alt=""
+                />
+                <h3
+                  class="text-normal text-upper text-300 m-bottom-75 text-second"
+                >
+                  PENDANT LAMP
+                </h3>
+                <div class="m-bottom-100">
+                  <span
+                    class="text-300 text-second text-line-through m-right-50"
+                    >$17.00
+                  </span>
+                  <span class="text-700 text-first">$10.00</span>
+                </div>
+                <div class="static flex jus-center column-gap-75">
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-search-line"></i>
+                  </div>
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-shopping-cart-line"></i>
+                  </div>
+                </div>
+                <span
+                  class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                  style="background-color: rgb(255, 128, 128)"
+                >
+                  sale
+                </span>
+              </a>
+              <!------------ PRODUCT ITEM  SALE-->
+              <a
+                href="./shop/sighleproduct.html"
+                class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80"
+              >
+                <img
+                  class="width-125 height-150 img-top img-contain m-bottom-100"
+                  src="./assets/img/product/product-7-121x201.png"
+                  alt=""
+                />
+                <h3
+                  class="text-normal text-upper text-300 m-bottom-75 text-second"
+                >
+                  FLOOR LAMP
+                </h3>
+                <div class="m-bottom-100">
+                  <span
+                    class="text-300 text-second text-line-through m-right-50"
+                    >$30.00
+                  </span>
+                  <span class="text-700 text-first">$23.00</span>
+                </div>
+                <div class="static flex jus-center column-gap-75">
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-search-line"></i>
+                  </div>
+                  <div
+                    class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer"
+                  >
+                    <i class="ri-shopping-cart-line"></i>
+                  </div>
+                </div>
+                <span
+                  class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
+                  style="background-color: rgb(255, 128, 128)"
+                >
+                  sale
+                </span>
+              </a>
+            </div>
+            <div
+              class="swiper-button-next sale__icon-next bg-first width-50 height-50 radius-50% md:none"
+            >
+              <i class="ri-arrow-right-s-line size-125 text-white"></i>
+            </div>
+            <div
+              class="swiper-button-prev sale__icon-prev bg-first width-50 height-50 radius-50% md:none"
+            >
+              <i class="ri-arrow-left-s-line size-125 text-white"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!----------- FOOTER  -->
+    <footer class="footer p-top-300 p-bottom-400 bg-second reveal-left">
+      <div
+        class="footer__container container grid grid-cols-3 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1"
+      >
+        <!------------ FOOTER ITEM  -->
+        <div class="footer__item">
+          <img
+            src="assets/img/logofooter.png"
+            alt=""
+            class="width-100 m-bottom-100 sm:width-150"
+          />
+          <div class="flex column-gap-100 text-title text-small m-bottom-25">
+            <span>Weekdays:</span>
+            <span>08:00am - 08:00pm</span>
+          </div>
+          <div class="flex column-gap-100 text-title text-small">
+            <span>Weekends:</span>
+            <span>10:00am - 06:00pm</span>
+          </div>
+          <div class="footer__line width-225 m-block-100"></div>
+          <div class="flex column-gap-150">
+            <span class="text-white"> Get Social </span>
+            <ul class="flex column-gap-75">
+              <li>
+                <a href="#" class="text-white">
+                  <i class="ri-facebook-fill size-125"></i>
+                </a>
               </li>
-              <li class="text-second hover:text-first trans-color-20 pointer">
-                2
+              <li>
+                <a href="#" class="text-white">
+                  <i class="ri-twitter-fill size-125"></i>
+                </a>
               </li>
-              <li class="text-second hover:text-first trans-color-20 pointer">
-                3
-              </li>
-              <li class="flex items-center text-second hover:text-first trans-color-20 pointer">
-                <i class="ri-arrow-right-s-line size-100"></i>
+              <li>
+                <a href="#" class="text-white">
+                  <i class="ri-youtube-line size-125"></i>
+                </a>
               </li>
             </ul>
           </div>
-
-          <!------------- RIGHT CONTENT  -->
-          <div class="flex direction-column row-gap-300 lg:none reveal-right">
-            <!------------ AUTHOR  -->
-            <div class="flex direction-column row-gap-100 items-center jus-center p-block-250 border-title-1">
-              <img src="./assets/img/person/team-15-370x334.jpg"
-                class="width-125 height-125 img-center img-cover radius-50%" alt="Hinh anh avatar" />
-              <h3 class="text-normal hover:text-first trans-color-30 pointer">
-                REBECCA HARISON
-              </h3>
-              <p class="text-small width-200 text-center text-300">
-                Europe's top designer, elite interior designer.
-              </p>
-            </div>
-
-            <!-------------- SEARCH BLOG  -->
-            <div class="flex jus-between items-center p-block-125 p-inline-100 bg-third">
-              <input type="text" placeholder="Search Blog"
-                class="bg-transparent outline-none border-initial-0 text-title placeholder:text-title" />
-              <i class="ri-search-2-line size-100 text-second pointer"></i>
-            </div>
-
-            <!---------------- CATEGORIES  -->
-            <div>
-              <h3 class="text-small text-upper text-second text-500">
-                categories
-              </h3>
-              <div class="line bg-third width-100% m-block-100"></div>
-              <ul class="flex direction-column row-gap-100">
-                <li class="flex items-center jus-between text-smaller">
-                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">All</a>
-                  <span>(18)</span>
-                </li>
-                <li class="flex items-center jus-between text-smaller">
-                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">News</a>
-                  <span>(9)</span>
-                </li>
-                <li class="flex items-center jus-between text-smaller">
-                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">Tips</a>
-                  <span>(5)</span>
-                </li>
-                <li class="flex items-center jus-between text-smaller">
-                  <a href="#" class="text-second hover:text-first trans-color-20 letter-1">Furniture</a>
-                  <span>(8)</span>
-                </li>
-              </ul>
-            </div>
-
-            <!--------------- LAST POSTED  -->
-            <div>
-              <h3 class="text-small text-upper text-second text-500">
-                lasted post
-              </h3>
-              <div class="line bg-third width-100% m-block-100"></div>
-              <div class="grid row-gap-100 m-bottom-125">
-                <!----------- CARD SMALL  -->
-                <a href="./singleblog.html" class="card grid grid-cols-2 column-gap-50 pointer">
-                  <div class="card__img hidden height-125 radius-25">
-                    <img src="./assets/img/blog/post-12-420x368.jpg" alt="Hinh anh blog"
-                      class="img-top img-cover trans-transform-20" />
-                  </div>
-                  <div>
-                    <h3 class="text-normal text-second m-bottom-50 text-700">
-                      LED Lighting and Its Benefits
-                    </h3>
-                    <div class="grid row-gap-50">
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
-                        October 12, 2036
-                      </span>
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-user-2-line size-100 m-right-25"></i>
-                        Thanh Trung
-                      </span>
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-message-2-line size-100 m-right-25"></i>
-                        32 Comments
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                <!----------- CARD SMALL  -->
-                <a href="./singleblog.html" class="card grid grid-cols-2 column-gap-50 pointer">
-                  <div class="card__img hidden height-125 radius-25">
-                    <img src="./assets/img/blog/post-13-420x368.jpg" alt="Hinh anh blog"
-                      class="img-bottom img-cover trans-transform-20" />
-                  </div>
-                  <div>
-                    <h3 class="text-normal text-second m-bottom-50 text-700">
-                      What to Look for When Shopping
-                    </h3>
-                    <div class="grid row-gap-50">
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-calendar-2-line size-100 m-right-25"></i>
-                        October 12, 2036
-                      </span>
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-user-2-line size-100 m-right-25"></i>
-                        Thanh Trung
-                      </span>
-                      <span class="text-smaller text-300 text-second flex items-center">
-                        <i class="ri-message-2-line size-100 m-right-25"></i>
-                        32 Comments
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!--------------- POPULAR TAG  -->
-            <div>
-              <h3 class="text-small text-upper text-second text-500">
-                popular tag
-              </h3>
-              <div class="line bg-third width-100% m-block-100"></div>
-              <div class="flex wrap column-gap-175 row-gap-100">
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  news
-                </a>
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  furniture
-                </a>
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  decor
-                </a>
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  tips
-                </a>
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  interior
-                </a>
-                <a href="#" class="text-smaller text-upper text-600 text-second hover:text-first trans-color-20">
-                  lighting
-                </a>
-              </div>
-            </div>
-
-            <!------------- ARCHIVE  -->
-            <div>
-              <h3 class="text-small text-upper text-second text-500">
-                ARCHIVE
-              </h3>
-              <div class="line bg-third width-100% m-block-100"></div>
-              <ul class="flex direction-column row-gap-75">
-                <li class="flex items-center column-gap-100">
-                  <i class="ri-edit-circle-fill text-first"></i>
-                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
-                    March 2023
-                  </a>
-                </li>
-                <li class="flex items-center column-gap-100">
-                  <i class="ri-edit-circle-fill text-first"></i>
-                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
-                    February 2023
-                  </a>
-                </li>
-                <li class="flex items-center column-gap-100">
-                  <i class="ri-edit-circle-fill text-first"></i>
-                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
-                    January 2023
-                  </a>
-                </li>
-                <li class="flex items-center column-gap-100">
-                  <i class="ri-edit-circle-fill text-first"></i>
-                  <a href="#" class="text-small text-second hover:text-first trans-color-20">
-                    December 2023
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!------------- SALE  -->
-    <section class="sale">
-      <div class="container p-block-150">
-        <h2 class="m-bottom-225 text-upper text-400 p-bottom-100 border-bottom-third-1 letter-1">product sale</h2>
-        <div class="swiper saleSwiper">
-          <div class="swiper-wrapper">
-            <!------------ PRODUCT ITEM  SALE-->
-            <a href="./shop/sighleproduct.html"
-              class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
-              <img class="width-125 height-150 img-top img-contain m-bottom-100"
-                src="./assets/img/product/product-1-129x172.png" alt="" />
-              <h3 class="text-normal text-upper text-300 m-bottom-75 text-second">
-                GARDEN TABLE
-              </h3>
-              <div class="m-bottom-100">
-                <span class="text-300 text-second text-line-through m-right-50">$30.00
-                </span>
-                <span class="text-700 text-first">$23.00</span>
-              </div>
-              <div class="static flex jus-center column-gap-75">
-                <div
-                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                  <i class="ri-search-line"></i>
-                </div>
-                <div
-                  class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                  <i class="ri-shopping-cart-line"></i>
-                </div>
-              </div>
-              <span
-                class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
-                style="background-color: rgb(255, 128, 128)">
-                sale
+        <!----------- FOOTER ITEM  -->
+        <div class="footer__item">
+          <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
+            contacts
+          </h3>
+          <ul class="grid row-gap-100">
+            <li class="flex column-gap-100 items-center">
+              <i class="ri-map-pin-line text-first size-100"></i>
+              <span class="text-title text-small">
+                35 Tran Dai Nghia, Di An City
               </span>
-            </a>
-
-          <!------------ PRODUCT ITEM  SALE-->
-          <a href="./shop/sighleproduct.html"
-            class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
-            <img class="width-125 height-150 img-top img-contain m-bottom-100"
-              src="./assets/img/product/product-2-160x155.png" alt="" />
-            <h3 class="text-normal text-upper text-300 m-bottom-75 text-second">
-              CLUB CHAIR
-            </h3>
-            <div class="m-bottom-100">
-              <span class="text-300 text-second text-line-through m-right-50">$32.00
-              </span>
-              <span class="text-700 text-first">$24.00</span>
-            </div>
-            <div class="static flex jus-center column-gap-75">
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-search-line"></i>
-              </div>
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-shopping-cart-line"></i>
-              </div>
-            </div>
-            <span
-              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
-              style="background-color: rgb(255, 128, 128)">
-              sale
-            </span>
-          </a>
-
-          <!------------ PRODUCT ITEM  SALE-->
-          <a href="./shop/sighleproduct.html"
-            class="product__item swiper-slide relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20">
-            <img class="width-125 height-150 img-top img-contain m-bottom-100"
-              src="./assets/img/product/product-3-132x200.png" alt="" />
-            <h3 class="text-normal text-upper text-300 m-bottom-75 text-second">
-              PENDANT LAMP
-            </h3>
-            <div class="m-bottom-100">
-              <span class="text-300 text-second text-line-through m-right-50">$17.00
-              </span>
-              <span class="text-700 text-first">$10.00</span>
-            </div>
-            <div class="static flex jus-center column-gap-75">
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-search-line"></i>
-              </div>
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-shopping-cart-line"></i>
-              </div>
-            </div>
-            <span
-              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
-              style="background-color: rgb(255, 128, 128)">
-              sale
-            </span>
-          </a>
-          <!------------ PRODUCT ITEM  SALE-->
-          <a href="./shop/sighleproduct.html"
-            class="swiper-slide product__item relative height-350 hidden bg-third radius-25 hover:bg-white hover:boxshadow-10 text-center p-top-175 trans-all-20 z-80">
-            <img class="width-125 height-150 img-top img-contain m-bottom-100"
-              src="./assets/img/product/product-7-121x201.png" alt="" />
-            <h3 class="text-normal text-upper text-300 m-bottom-75 text-second">
-              FLOOR LAMP
-            </h3>
-            <div class="m-bottom-100">
-              <span class="text-300 text-second text-line-through m-right-50">$30.00
-              </span>
-              <span class="text-700 text-first">$23.00</span>
-            </div>
-            <div class="static flex jus-center column-gap-75">
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-search-line"></i>
-              </div>
-              <div
-                class="product__action text-white bg-second height-50 width-50 flex items-center jus-center radius-50% hover:bg-first trans-all-20 opacity-0 pointer">
-                <i class="ri-shopping-cart-line"></i>
-              </div>
-            </div>
-            <span
-              class="absolute boxshadow-3 top-100 right-100 p-block-25 p-inline-75 radius-25 text-white text-upper text-smaller"
-              style="background-color: rgb(255, 128, 128)">
-              sale
-            </span>
-          </div>
-        </div>
-        <div class="swiper-button-next sale__icon-next bg-first width-50 height-50 radius-50% md:none">
-          <i class="ri-arrow-right-s-line size-125 text-white"></i>
-        </div>
-        <div class="swiper-button-prev sale__icon-prev bg-first width-50 height-50 radius-50% md:none">
-          <i class="ri-arrow-left-s-line size-125 text-white"></i>
-        </div>
-      </div>
-      </div>
-    </section>
-  </main>
-
-  <!----------- FOOTER  -->
-  <footer class="footer p-top-300 p-bottom-400 bg-second reveal-left">
-    <div class="footer__container container grid grid-cols-3 lg:grid-cols-2 lg:row-gap-250 sm:grid-cols-1">
-      <!------------ FOOTER ITEM  -->
-      <div class="footer__item">
-        <img src="assets/img/logofooter.png" alt="" class="width-100 m-bottom-100 sm:width-150" />
-        <div class="flex column-gap-100 text-title text-small m-bottom-25">
-          <span>Weekdays:</span>
-          <span>08:00am - 08:00pm</span>
-        </div>
-        <div class="flex column-gap-100 text-title text-small">
-          <span>Weekends:</span>
-          <span>10:00am - 06:00pm</span>
-        </div>
-        <div class="footer__line width-225 m-block-100"></div>
-        <div class="flex column-gap-150">
-          <span class="text-white"> Get Social </span>
-          <ul class="flex column-gap-75">
-            <li>
-              <a href="#" class="text-white">
-                <i class="ri-facebook-fill size-125"></i>
-              </a>
             </li>
-            <li>
-              <a href="#" class="text-white">
-                <i class="ri-twitter-fill size-125"></i>
-              </a>
+            <li class="flex column-gap-100 items-center">
+              <i class="ri-phone-line text-first size-100"></i>
+              <span class="text-title text-small"> (+84) 937 022 915 </span>
             </li>
-            <li>
-              <a href="#" class="text-white">
-                <i class="ri-youtube-line size-125"></i>
-              </a>
+            <li class="flex column-gap-100 items-center">
+              <i class="ri-mail-line text-first size-100"></i>
+              <span class="text-title text-small">
+                thanhtrung71119999@gmail.com
+              </span>
             </li>
           </ul>
         </div>
-      </div>
 
-      <!----------- FOOTER ITEM  -->
-      <div class="footer__item">
-        <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
-          contacts
-        </h3>
-        <ul class="grid row-gap-100">
-          <li class="flex column-gap-100 items-center">
-            <i class="ri-map-pin-line text-first size-100"></i>
-            <span class="text-title text-small">
-              35 Tran Dai Nghia, Di An City
-            </span>
-          </li>
-          <li class="flex column-gap-100 items-center">
-            <i class="ri-phone-line text-first size-100"></i>
-            <span class="text-title text-small"> (+84) 937 022 915 </span>
-          </li>
-          <li class="flex column-gap-100 items-center">
-            <i class="ri-mail-line text-first size-100"></i>
-            <span class="text-title text-small">
-              thanhtrung71119999@gmail.com
-            </span>
-          </li>
-        </ul>
+        <!----------- FOOTER ITEM  -->
+        <div class="footer__item">
+          <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
+            NEWSLETTER
+          </h3>
+          <p class="text-small text-title m-bottom-100">
+            Subscribe to our newsletter to receive weekly news, updates, special
+            offers, and exclusive discounts.
+          </p>
+          <form
+            action=""
+            class="bg-first p-inline-100 p-block-75 flex jus-between"
+          >
+            <input
+              class="width-90% outline-none border-black-0 bg-transparent text-white text-smaller"
+              placeholder="Enter your email"
+              type="text"
+            />
+            <i class="ri-send-plane-fill text-white pointer"></i>
+          </form>
+        </div>
       </div>
-
-      <!----------- FOOTER ITEM  -->
-      <div class="footer__item">
-        <h3 class="text-h3 text-700 text-upper text-white m-bottom-150">
-          NEWSLETTER
-        </h3>
-        <p class="text-small text-title m-bottom-100">
-          Subscribe to our newsletter to receive weekly news, updates, special
-          offers, and exclusive discounts.
-        </p>
-        <form action="" class="bg-first p-inline-100 p-block-75 flex jus-between">
-          <input class="width-90% outline-none border-black-0 bg-transparent text-white text-smaller"
-            placeholder="Enter your email" type="text" />
-          <i class="ri-send-plane-fill text-white pointer"></i>
-        </form>
-      </div>
+    </footer>
+    <div
+      class="copyright flex jus-center items-center height-75 bg-white text-first text-700 reveal-left"
+    >
+      © 2023 Sofa. All rights reserved
     </div>
-  </footer>
-  <div class="copyright flex jus-center items-center height-75 bg-white text-first text-700 reveal-left">
-    © 2023 Sofa. All rights reserved
-  </div>
-  <a href="#" id="scrollUp"
-    class="scroll__up fixed -bottom-100% right-100 height-50 width-50 radius-50% flex items-center jus-center bg-white boxshadow-10 text-first pointer">
-    <i class="ri-arrow-up-line size-125"></i>
-  </a>
- <!-- Messenger Plugin chat Code -->
- <div id="fb-root"></div>
+    <a
+      href="#"
+      id="scrollUp"
+      class="scroll__up fixed -bottom-100% right-100 height-50 width-50 radius-50% flex items-center jus-center bg-white boxshadow-10 text-first pointer"
+    >
+      <i class="ri-arrow-up-line size-125"></i>
+    </a>
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
 
- <!-- Your Plugin chat code -->
- <div id="fb-customer-chat" class="fb-customerchat">
- </div>
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
 
- <script>
-   var chatbox = document.getElementById('fb-customer-chat');
-   chatbox.setAttribute("page_id", "115408399833388");
-   chatbox.setAttribute("attribution", "biz_inbox");
- </script>
+    <script>
+      var chatbox = document.getElementById("fb-customer-chat");
+      chatbox.setAttribute("page_id", "115408399833388");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
 
- <!-- Your SDK code -->
- <script>
-   window.fbAsyncInit = function () {
-     FB.init({
-       xfbml: true,
-       version: 'v16.0'
-     });
-   };
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v16.0",
+        });
+      };
 
-   (function (d, s, id) {
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) return;
-     js = d.createElement(s); js.id = id;
-     js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- </script>
-  <script src="./assets/js/scrollreveal.js"></script>
-  <script src="./assets/js/swiper-bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-</body>
-
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <script src="./assets/js/scrollreveal.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
